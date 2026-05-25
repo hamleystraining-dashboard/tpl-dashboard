@@ -10,504 +10,183 @@
   "excludedDays": [],
   "storesByRom": {
     "Divya Lakshmi": [
-      {
-        "name": "Express Avenue - Chennai",
-        "code": "THD8"
-      },
-      {
-        "name": "Phoenix Marketcity - Chennai",
-        "code": "THF0"
-      },
-      {
-        "name": "Brookefields Mall - Coimbatore",
-        "code": "THF1"
-      },
-      {
-        "name": "Lulu International Mall - Kochi",
-        "code": "THG0"
-      },
-      {
-        "name": "Nexus Vijaya Mall - Chennai",
-        "code": "THG7"
-      },
-      {
-        "name": "Prozone mall - Coimbatore",
-        "code": "THI3"
-      },
-      {
-        "name": "VR Mall - Chennai",
-        "code": "THP1"
-      },
-      {
-        "name": "Gokulam Galleria - Calicut",
-        "code": "TUW4"
-      },
-      {
-        "name": "Hilite mall - Calicut",
-        "code": "TY7V"
-      },
-      {
-        "name": "Lulu Mall Trivandrum",
-        "code": "T42A"
-      },
-      {
-        "name": "Ham.Marina",
-        "code": "TL6C"
-      },
-      {
-        "name": "Forum Mall - Kochi",
-        "code": "T2WF"
-      },
-      {
-        "name": "T1 Arrival - Chennai",
-        "code": "T7UJ"
-      }
+      {"name":"Express Avenue - Chennai","code":"THD8"},
+      {"name":"Phoenix Marketcity - Chennai","code":"THF0"},
+      {"name":"Brookefields Mall - Coimbatore","code":"THF1"},
+      {"name":"Lulu International Mall - Kochi","code":"THG0"},
+      {"name":"Nexus Vijaya Mall - Chennai","code":"THG7"},
+      {"name":"Prozone mall - Coimbatore","code":"THI3"},
+      {"name":"VR Mall - Chennai","code":"THP1"},
+      {"name":"Gokulam Galleria - Calicut","code":"TUW4"},
+      {"name":"Hilite mall - Calicut","code":"TY7V"},
+      {"name":"Lulu Mall Trivandrum","code":"T42A"},
+      {"name":"Ham.Marina","code":"TL6C"},
+      {"name":"Forum Mall - Kochi","code":"T2WF"},
+      {"name":"T1 Arrival - Chennai","code":"T7UJ"}
     ],
     "Shirish Mastud": [
-      {
-        "name": "Hamleys - Infinty, Malad",
-        "code": "THD9"
-      },
-      {
-        "name": "Hamleys - Alpha One, Ahmedabad",
-        "code": "THE2"
-      },
-      {
-        "name": "Hamleys - Viviana, Thane",
-        "code": "THE9"
-      },
-      {
-        "name": "Hamleys - MUMArpt",
-        "code": "THF6"
-      },
-      {
-        "name": "Ham.Inorbit Vododara",
-        "code": "THG5"
-      },
-      {
-        "name": "Hamleys - DB City, Bhopal",
-        "code": "THG9"
-      },
-      {
-        "name": "Hamleys - Nexus Seawood",
-        "code": "THH8"
-      },
-      {
-        "name": "Hamleys - T1 Arrival",
-        "code": "THI8"
-      },
-      {
-        "name": "Hamleys - Xperia, Dombivali",
-        "code": "THI9"
-      },
-      {
-        "name": "Hamleys - Oberoi, Goregaon",
-        "code": "THJ2"
-      },
-      {
-        "name": "Hamleys - T2 Arrival",
-        "code": "THJ4"
-      },
-      {
-        "name": "Hamleys - Surat",
-        "code": "THK1"
-      },
-      {
-        "name": "Hamleys - Mall De, Goa",
-        "code": "THM8"
-      },
-      {
-        "name": "Hamleys - Ambuja, Raipur",
-        "code": "THQ0"
-      },
-      {
-        "name": "Ham. Golden Icon",
-        "code": "THS6"
-      },
-      {
-        "name": "Hamleys - HN Hospital",
-        "code": "TMA0"
-      },
-      {
-        "name": "Hamleys - JWD",
-        "code": "TY4T"
-      },
-      {
-        "name": "Ham - Goa Airport",
-        "code": "T42C"
-      },
-      {
-        "name": "Ham - Palladium Ahmedabad",
-        "code": "T77X"
-      },
-      {
-        "name": "Ham - Ahmedabad Arriaval",
-        "code": "T5PF"
-      },
-      {
-        "name": "Ham - Rajkot",
-        "code": "T3AA"
-      },
-      {
-        "name": "Ham - Kurla, PMC",
-        "code": "T8LI"
-      },
-      {
-        "name": "Ham - HSP.GF",
-        "code": "TB2N"
-      },
-      {
-        "name": "Ham - HSP.FF",
-        "code": "TB2O"
-      },
-      {
-        "name": "Ham - Rcity Mall, Ghatkopar",
-        "code": "T7ZN"
-      },
-      {
-        "name": "Ham. Sky City",
-        "code": "TF5Y"
-      },
-      {
-        "name": "Ham.ZoraMall",
-        "code": "TBIM"
-      }
+      {"name":"Hamleys - Infinty, Malad","code":"THD9"},
+      {"name":"Hamleys - Alpha One, Ahmedabad","code":"THE2"},
+      {"name":"Hamleys - Viviana, Thane","code":"THE9"},
+      {"name":"Hamleys - MUMArpt","code":"THF6"},
+      {"name":"Ham.Inorbit Vododara","code":"THG5"},
+      {"name":"Hamleys - DB City, Bhopal","code":"THG9"},
+      {"name":"Hamleys - Nexus Seawood","code":"THH8"},
+      {"name":"Hamleys - T1 Arrival","code":"THI8"},
+      {"name":"Hamleys - Xperia, Dombivali","code":"THI9"},
+      {"name":"Hamleys - Oberoi, Goregaon","code":"THJ2"},
+      {"name":"Hamleys - T2 Arrival","code":"THJ4"},
+      {"name":"Hamleys - Surat","code":"THK1"},
+      {"name":"Hamleys - Mall De, Goa","code":"THM8"},
+      {"name":"Hamleys - Ambuja, Raipur","code":"THQ0"},
+      {"name":"Ham. Golden Icon","code":"THS6"},
+      {"name":"Hamleys - HN Hospital","code":"TMA0"},
+      {"name":"Hamleys - JWD","code":"TY4T"},
+      {"name":"Ham - Goa Airport","code":"T42C"},
+      {"name":"Ham - Palladium Ahmedabad","code":"T77X"},
+      {"name":"Ham - Ahmedabad Arriaval","code":"T5PF"},
+      {"name":"Ham - Rajkot","code":"T3AA"},
+      {"name":"Ham - Kurla, PMC","code":"T8LI"},
+      {"name":"Ham - HSP.GF","code":"TB2N"},
+      {"name":"Ham - HSP.FF","code":"TB2O"},
+      {"name":"Ham - Rcity Mall, Ghatkopar","code":"T7ZN"},
+      {"name":"Ham. Sky City","code":"TF5Y"},
+      {"name":"Ham.ZoraMall","code":"TBIM"}
     ],
     "Ashlin Moses": [
-      {
-        "name": "Phoenix Marketcity - Blr",
-        "code": "THE0"
-      },
-      {
-        "name": "Forum Sujana Mall - Hyd",
-        "code": "THG3"
-      },
-      {
-        "name": "1 MG - Lido Mall  - Blr",
-        "code": "THG4"
-      },
-      {
-        "name": "Inorbit Mall - Hyd",
-        "code": "THJ0"
-      },
-      {
-        "name": "L&T Mall - Hyd",
-        "code": "THN3"
-      },
-      {
-        "name": "Nexus Shantiniketan Mall - Blr",
-        "code": "THO8"
-      },
-      {
-        "name": "UB City - Blr",
-        "code": "THO9"
-      },
-      {
-        "name": "Sarath City Capital Mall - Hyd",
-        "code": "THP5"
-      },
-      {
-        "name": "Nexus Centre City - Mys",
-        "code": "THQ2"
-      },
-      {
-        "name": "D-Address Mall - Vijayawada",
-        "code": "THR0"
-      },
-      {
-        "name": "Orion Mall - Blr",
-        "code": "THS5"
-      },
-      {
-        "name": "GSM Mall - Hyd",
-        "code": "TJU3"
-      },
-      {
-        "name": "DSL Virtue Mall - Hyd",
-        "code": "TJU4"
-      },
-      {
-        "name": "Airport Arrival  - Blr",
-        "code": "TPV4"
-      },
-      {
-        "name": "Airport Departure - Blr",
-        "code": "TPV5"
-      },
-      {
-        "name": "Walter Main Rd - Vizag",
-        "code": "TWR1"
-      },
-      {
-        "name": "HSR Layout - Blr",
-        "code": "TXGB"
-      },
-      {
-        "name": "Indiranagar - Blr",
-        "code": "TXSG"
-      },
-      {
-        "name": "Banjara Hills  - Hyd",
-        "code": "TXSI"
-      },
-      {
-        "name": "Vega City Mall - Blr",
-        "code": "TZ8Z"
-      },
-      {
-        "name": "Falcon City - Blr",
-        "code": "T36H"
-      },
-      {
-        "name": "T2 Airport - Blr",
-        "code": "T36O"
-      },
-      {
-        "name": "Ham.GarudaMall",
-        "code": "TK0G"
-      },
-      {
-        "name": "Mall Of Asia - Blr",
-        "code": "T2MI"
-      },
-      {
-        "name": "Hamleys - Ham.LuluBlr",
-        "code": "TL9A"
-      },
-      {
-        "name": "Ham.Lakeshore Hyd",
-        "code": "TBAV"
-      },
-      {
-        "name": "Ham.Inorbit Hubli",
-        "code": "T9F6"
-      }
+      {"name":"Phoenix Marketcity - Blr","code":"THE0"},
+      {"name":"Forum Sujana Mall - Hyd","code":"THG3"},
+      {"name":"1 MG - Lido Mall - Blr","code":"THG4"},
+      {"name":"Inorbit Mall - Hyd","code":"THJ0"},
+      {"name":"L&T Mall - Hyd","code":"THN3"},
+      {"name":"Nexus Shantiniketan Mall - Blr","code":"THO8"},
+      {"name":"UB City - Blr","code":"THO9"},
+      {"name":"Sarath City Capital Mall - Hyd","code":"THP5"},
+      {"name":"Nexus Centre City - Mys","code":"THQ2"},
+      {"name":"D-Address Mall - Vijayawada","code":"THR0"},
+      {"name":"Orion Mall - Blr","code":"THS5"},
+      {"name":"GSM Mall - Hyd","code":"TJU3"},
+      {"name":"DSL Virtue Mall - Hyd","code":"TJU4"},
+      {"name":"Airport Arrival - Blr","code":"TPV4"},
+      {"name":"Airport Departure - Blr","code":"TPV5"},
+      {"name":"Walter Main Rd - Vizag","code":"TWR1"},
+      {"name":"HSR Layout - Blr","code":"TXGB"},
+      {"name":"Indiranagar - Blr","code":"TXSG"},
+      {"name":"Banjara Hills - Hyd","code":"TXSI"},
+      {"name":"Vega City Mall - Blr","code":"TZ8Z"},
+      {"name":"Falcon City - Blr","code":"T36H"},
+      {"name":"T2 Airport - Blr","code":"T36O"},
+      {"name":"Ham.GarudaMall","code":"TK0G"},
+      {"name":"Mall Of Asia - Blr","code":"T2MI"},
+      {"name":"Hamleys - Ham.LuluBlr","code":"TL9A"},
+      {"name":"Ham.Lakeshore Hyd","code":"TBAV"},
+      {"name":"Ham.Inorbit Hubli","code":"T9F6"}
     ],
     "Ajay Gill": [
-      {
-        "name": "Hamleys - Elante - Chandigarh",
-        "code": "THE1"
-      },
-      {
-        "name": "Ambience Vasant Kunj - Delhi",
-        "code": "THE8"
-      },
-      {
-        "name": "Ambience Gurgaon Mall",
-        "code": "THF9"
-      },
-      {
-        "name": "Pacific Mall - Delhi",
-        "code": "THH2"
-      },
-      {
-        "name": "Select City Mall - Delhi",
-        "code": "THH3"
-      },
-      {
-        "name": "WTP - Jaipur",
-        "code": "THI7"
-      },
-      {
-        "name": "Ardee Mall",
-        "code": "THM0"
-      },
-      {
-        "name": "Hamleys - Ham.Airia.Grgn",
-        "code": "TJY4"
-      },
-      {
-        "name": "Hamleys - Vegas Mall  Dwarka",
-        "code": "TLX5"
-      },
-      {
-        "name": "Ambala-NH1",
-        "code": "TXPH"
-      },
-      {
-        "name": "Dhillon Plaza",
-        "code": "TXR2"
-      },
-      {
-        "name": "Vaishali- Jaipur",
-        "code": "TXUT"
-      },
-      {
-        "name": "Good Earth - Gurgaon",
-        "code": "TXYT"
-      },
-      {
-        "name": "Ham.PacificMal",
-        "code": "TF5T"
-      },
-      {
-        "name": "Clebration Mall - Udaipur",
-        "code": "TAUN"
-      },
-      {
-        "name": "Ham.CP67 Mall",
-        "code": "T2DD"
-      },
-      {
-        "name": "Ham.Irisbrdway",
-        "code": "TL6O"
-      },
-      {
-        "name": "Unity Elegante Delhi",
-        "code": "TB6V"
-      },
-      {
-        "name": "Pacific Mall",
-        "code": "TM1H"
-      }
+      {"name":"Hamleys - Elante - Chandigarh","code":"THE1"},
+      {"name":"Ambience Vasant Kunj - Delhi","code":"THE8"},
+      {"name":"Ambience Gurgaon Mall","code":"THF9"},
+      {"name":"Pacific Mall - Delhi","code":"THH2"},
+      {"name":"Select City Mall - Delhi","code":"THH3"},
+      {"name":"WTP - Jaipur","code":"THI7"},
+      {"name":"Ardee Mall","code":"THM0"},
+      {"name":"Hamleys - Ham.Airia.Grgn","code":"TJY4"},
+      {"name":"Hamleys - Vegas Mall Dwarka","code":"TLX5"},
+      {"name":"Ambala-NH1","code":"TXPH"},
+      {"name":"Dhillon Plaza","code":"TXR2"},
+      {"name":"Vaishali - Jaipur","code":"TXUT"},
+      {"name":"Good Earth - Gurgaon","code":"TXYT"},
+      {"name":"Ham.PacificMal","code":"TF5T"},
+      {"name":"Clebration Mall - Udaipur","code":"TAUN"},
+      {"name":"Ham.CP67 Mall","code":"T2DD"},
+      {"name":"Ham.Irisbrdway","code":"TL6O"},
+      {"name":"Unity Elegante Delhi","code":"TB6V"},
+      {"name":"Pacific Mall","code":"TM1H"}
     ],
     "Chetan Chaudhari": [
-      {
-        "name": "Hamleys - PMC,Pune",
-        "code": "THE4"
-      },
-      {
-        "name": "Hamleys - Quest",
-        "code": "THF4"
-      },
-      {
-        "name": "Hamleys - Treasure Island,Indore",
-        "code": "THG2"
-      },
-      {
-        "name": "Hamleys - ICC, Pune",
-        "code": "THI2"
-      },
-      {
-        "name": "Hamleys - Siligur",
-        "code": "THI5"
-      },
-      {
-        "name": "Hamleys - Nucleus",
-        "code": "THN2"
-      },
-      {
-        "name": "Hamleys - Utkal",
-        "code": "THN6"
-      },
-      {
-        "name": "Hamleys - C21, Indore",
-        "code": "THP2"
-      },
-      {
-        "name": "Hamleys - Forum",
-        "code": "THQ3"
-      },
-      {
-        "name": "Hamleys - South city",
-        "code": "THR3"
-      },
-      {
-        "name": "Hamleys - CtyCntr",
-        "code": "THS7"
-      },
-      {
-        "name": "Ham.Guwahati.Arr",
-        "code": "TZKY"
-      },
-      {
-        "name": "Ham.Guwahati.Dep",
-        "code": "TZKZ"
-      },
-      {
-        "name": "Ham -Phoenix Citadel Indore",
-        "code": "T34O"
-      },
-      {
-        "name": "Ham - Mall of Millienimium, Pune",
-        "code": "T2UO"
-      },
-      {
-        "name": "Ham -  Prozone, Aurangabad",
-        "code": "T6AA"
-      }
+      {"name":"Hamleys - PMC, Pune","code":"THE4"},
+      {"name":"Hamleys - Quest","code":"THF4"},
+      {"name":"Hamleys - Treasure Island, Indore","code":"THG2"},
+      {"name":"Hamleys - ICC, Pune","code":"THI2"},
+      {"name":"Hamleys - Siligur","code":"THI5"},
+      {"name":"Hamleys - Nucleus","code":"THN2"},
+      {"name":"Hamleys - Utkal","code":"THN6"},
+      {"name":"Hamleys - C21, Indore","code":"THP2"},
+      {"name":"Hamleys - Forum","code":"THQ3"},
+      {"name":"Hamleys - South city","code":"THR3"},
+      {"name":"Hamleys - CtyCntr","code":"THS7"},
+      {"name":"Ham.Guwahati.Arr","code":"TZKY"},
+      {"name":"Ham.Guwahati.Dep","code":"TZKZ"},
+      {"name":"Ham - Phoenix Citadel Indore","code":"T34O"},
+      {"name":"Ham - Mall of Millienimium, Pune","code":"T2UO"},
+      {"name":"Ham - Prozone, Aurangabad","code":"T6AA"}
     ],
     "Lalit Mohan": [
-      {
-        "name": "Logic City Centre - Noida",
-        "code": "THF2"
-      },
-      {
-        "name": "Hamleys - DelhiT3",
-        "code": "THF8"
-      },
-      {
-        "name": "Pavilion Mall - Ludhia",
-        "code": "THG8"
-      },
-      {
-        "name": "Hamleys - T3Depar",
-        "code": "THI0"
-      },
-      {
-        "name": "Alfa one 1 - Amritsar",
-        "code": "THJ1"
-      },
-      {
-        "name": "Mall of India - Noida",
-        "code": "THK0"
-      },
-      {
-        "name": "Zaquare Kanpur",
-        "code": "THM2"
-      },
-      {
-        "name": "Reliance Mall - Jalandha",
-        "code": "THP0"
-      },
-      {
-        "name": "Wave Mall - Jammu",
-        "code": "THP7"
-      },
-      {
-        "name": "Gaur City - Noida",
-        "code": "THS8"
-      },
-      {
-        "name": "Palsssio Mall -  Lucknow",
-        "code": "TJU6"
-      },
-      {
-        "name": "Hamleys- Dehradun",
-        "code": "TZ8A"
-      },
-      {
-        "name": "Lulu Mall - Lucknow",
-        "code": "T38E"
-      },
-      {
-        "name": "Hamleys - T1A",
-        "code": "TASG"
-      },
-      {
-        "name": "Ham,Lucknow Dept",
-        "code": "T2DE"
-      },
-      {
-        "name": "Ham, Lucknow Arrival",
-        "code": "T2DK"
-      },
-      {
-        "name": "Ham. DelhiT1D",
-        "code": "T0ZV"
-      },
-      {
-        "name": "Creekside Doraha P",
-        "code": "TBC7"
-      },
-      {
-        "name": "Ham.Model Town",
-        "code": "TM1F"
-      }
+      {"name":"Logic City Centre - Noida","code":"THF2"},
+      {"name":"Hamleys - DelhiT3","code":"THF8"},
+      {"name":"Pavilion Mall - Ludhia","code":"THG8"},
+      {"name":"Hamleys - T3Depar","code":"THI0"},
+      {"name":"Alfa one 1 - Amritsar","code":"THJ1"},
+      {"name":"Mall of India - Noida","code":"THK0"},
+      {"name":"Zaquare Kanpur","code":"THM2"},
+      {"name":"Reliance Mall - Jalandha","code":"THP0"},
+      {"name":"Wave Mall - Jammu","code":"THP7"},
+      {"name":"Gaur City - Noida","code":"THS8"},
+      {"name":"Palsssio Mall - Lucknow","code":"TJU6"},
+      {"name":"Hamleys- Dehradun","code":"TZ8A"},
+      {"name":"Lulu Mall - Lucknow","code":"T38E"},
+      {"name":"Hamleys - T1A","code":"TASG"},
+      {"name":"Ham,Lucknow Dept","code":"T2DE"},
+      {"name":"Ham, Lucknow Arrival","code":"T2DK"},
+      {"name":"Ham. DelhiT1D","code":"T0ZV"},
+      {"name":"Creekside Doraha P","code":"TBC7"},
+      {"name":"Ham.Model Town","code":"TM1F"}
     ]
   },
-  "compliance": {},
-  "weekLabel": "",
-  "weekDays": [],
+  "compliance": {
+    "Ajay Gill": {
+      "Monday":{"completed":["T2DD","THE1","TLX5","TM1H","THH2"],"missed":["TXPH","THF9","THE8","THM0","TAUN","TXR2","TXYT","TL6O","TF5T","TJY4","THH3","TB6V","TXUT","THI7"],"count":5},
+      "Tuesday":{"completed":["TXPH","T2DD","THE1"],"missed":["THF9","THE8","THM0","TAUN","TXR2","TXYT","TL6O","TF5T","TJY4","TLX5","TM1H","THH2","THH3","TB6V","TXUT","THI7"],"count":3},
+      "Wednesday":{"completed":["TXPH","TAUN","T2DD"],"missed":["THF9","THE8","THM0","TXR2","TXYT","TL6O","TF5T","THE1","TJY4","TLX5","TM1H","THH2","THH3","TB6V","TXUT","THI7"],"count":3},
+      "Thursday":{"completed":["TXPH","TAUN","T2DD","THE1"],"missed":["THF9","THE8","THM0","TXR2","TXYT","TL6O","TF5T","TJY4","TLX5","TM1H","THH2","THH3","TB6V","TXUT","THI7"],"count":4}
+    },
+    "Ashlin Moses": {
+      "Monday":{"completed":["TPV5","T36H","TXGB","TK0G","TBAV","TL9A","TXSG","T2MI","THE0","T36O","THO9","TZ8Z","TWR1"],"missed":["THG4","TPV4","TXSI","THR0","TJU4","THG3","TJU3","T9F6","THJ0","THN3","THQ2","THO8","THS5","THP5"],"count":13},
+      "Tuesday":{"completed":["TPV5","TXSI","THR0","TJU4","T36H","THG3","TJU3","TXGB","TBAV","TL9A","THJ0","THQ2","THO8","THE0","THP5","T36O","THO9","TZ8Z","TWR1"],"missed":["THG4","TPV4","TK0G","T9F6","TXSG","THN3","T2MI","THS5"],"count":19},
+      "Wednesday":{"completed":["TPV5","TXGB","TL9A","THQ2","THE0","T36O","TZ8Z","TWR1"],"missed":["THG4","TPV4","TXSI","THR0","TJU4","T36H","THG3","TJU3","TK0G","T9F6","TBAV","TXSG","THJ0","THN3","T2MI","THO8","THS5","THP5","THO9"],"count":8},
+      "Thursday":{"completed":["T36H","TXGB","TL9A","TWR1"],"missed":["THG4","TPV4","TPV5","TXSI","THR0","TJU4","THG3","TJU3","TK0G","T9F6","TBAV","TXSG","THJ0","THN3","T2MI","THQ2","THO8","THS5","THE0","THP5","T36O","THO9","TZ8Z"],"count":4}
+    },
+    "Chetan Chaudhari": {
+      "Monday":{"completed":["T6AA","THP2","THS7","THQ3","THF4","THI5","THR3","THG2","THN6","THE4"],"missed":["T2UO","T34O","TZKY","TZKZ","THI2","THN2"],"count":10},
+      "Tuesday":{"completed":["T6AA","THP2","THS7","THQ3","THF4","THI5","THR3","THG2"],"missed":["T2UO","T34O","TZKY","TZKZ","THI2","THN2","THE4","THN6"],"count":8},
+      "Wednesday":{"completed":["T6AA","THP2","THS7","THQ3","THN2","THI5","THR3","THG2","THN6"],"missed":["T2UO","T34O","TZKY","TZKZ","THI2","THE4","THF4"],"count":9},
+      "Thursday":{"completed":["T6AA","THP2","THS7","THQ3","THN2","THF4","THR3","THG2","THN6"],"missed":["T2UO","T34O","TZKY","TZKZ","THI2","THE4","THI5"],"count":9}
+    },
+    "Divya Lakshmi": {
+      "Monday":{"completed":["THF1","THD8","T2WF","T42A","THG7","THF0","THP1"],"missed":["TUW4","TL6C","TY7V","THG0","THI3","T7UJ"],"count":7},
+      "Tuesday":{"completed":["THF1","THD8","T42A","THG7","THF0"],"missed":["T2WF","TUW4","TL6C","TY7V","THG0","THI3","T7UJ","THP1"],"count":5},
+      "Wednesday":{"completed":["THF1","THF0"],"missed":["THD8","T2WF","TUW4","TL6C","TY7V","THG0","T42A","THG7","THI3","T7UJ","THP1"],"count":2},
+      "Thursday":{"completed":["THF1","THF0"],"missed":["THD8","T2WF","TUW4","TL6C","TY7V","THG0","T42A","THG7","THI3","T7UJ","THP1"],"count":2}
+    },
+    "Lalit Mohan": {
+      "Monday":{"completed":["THJ1","THS8","T2DK","T2DE","T0ZV","TM1F","THF8","TASG","TZ8A","THF2","T38E","THK0","THG8","THP0","THP7","THM2"],"missed":["TBC7","THI0","TJU6"],"count":16},
+      "Tuesday":{"completed":["THJ1","THS8","T2DE","THF8","TASG","TZ8A","T38E","THK0","TJU6","THG8","THP7","THM2"],"missed":["TBC7","T2DK","T0ZV","TM1F","THI0","THF2","THP0"],"count":12},
+      "Wednesday":{"completed":["THJ1","THS8","T0ZV","TM1F","THF8","TASG","T38E","THK0","TJU6","THG8","THP7"],"missed":["TBC7","T2DK","T2DE","THI0","TZ8A","THF2","THP0","THM2"],"count":11},
+      "Thursday":{"completed":["THJ1","TM1F","THF8","TASG","T38E","THK0","TJU6","THP7"],"missed":["TBC7","THS8","T2DK","T2DE","T0ZV","THI0","TZ8A","THF2","THG8","THP0","THM2"],"count":8}
+    },
+    "Shirish Mastud": {
+      "Monday":{"completed":["T5PF","T42C","TB2O","TB2N","T8LI","T77X","T7ZN","THS6","TF5Y","THG5","TBIM","THE2","THD9","TY4T","THF6","THM8","THH8","THJ2","THK1","THJ4","THE9","THI9"],"missed":["T3AA","THQ0","THG9","TMA0","THI8"],"count":22},
+      "Tuesday":{"completed":["T5PF","T42C","TB2O","TB2N","T8LI","T77X","T7ZN","THS6","TF5Y","THG5","TBIM","THE2","THQ0","TY4T","THM8","THH8","THJ2","THK1","THI8","THJ4","THE9","THI9"],"missed":["T3AA","THG9","TMA0","THD9","THF6"],"count":22},
+      "Wednesday":{"completed":["T5PF","T42C","TB2O","T8LI","T77X","T7ZN","THS6","THG5","TBIM","THE2","THQ0","TY4T","THM8","THH8","THJ2","THK1","THI8","THJ4","THE9","THI9"],"missed":["T3AA","TF5Y","THG9","TMA0","THD9","THF6","TB2N"],"count":20},
+      "Thursday":{"completed":["TB2O","T8LI","T77X","T7ZN","THS6","TF5Y","THG5","THE2","THG9","TY4T","THH8","THJ2","THK1","THI8","THJ4","THE9","THI9"],"missed":["T5PF","T42C","TB2N","T3AA","TBIM","THQ0","TMA0","THD9","THF6","THM8"],"count":17}
+    }
+  },
+  "weekLabel": "18 – 21 May 2026",
+  "weekDays": [
+    {"day":"Monday","date":"2026-05-18","dateLabel":"18 May"},
+    {"day":"Tuesday","date":"2026-05-19","dateLabel":"19 May"},
+    {"day":"Wednesday","date":"2026-05-20","dateLabel":"20 May"},
+    {"day":"Thursday","date":"2026-05-21","dateLabel":"21 May"}
+  ],
   "lastUpdated": "2026-05-25"
 }
