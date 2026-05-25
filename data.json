@@ -1,0 +1,1295 @@
+{
+  "romTotals": {
+    "Shirish Mastud": 32,
+    "Lalit Mohan": 19,
+    "Chetan Chaudhari": 18,
+    "Ashlin Moses": 25,
+    "Divya Lakshmi": 14,
+    "Ajay Gill": 21
+  },
+  "excludedDays": [],
+  "storesByRom": {
+    "Ajay Gill": [
+      {
+        "code": "T2DD",
+        "name": "Ham.CP67 Mall"
+      },
+      {
+        "code": "THE1",
+        "name": "Hamleys - Elante - Chandigarh"
+      },
+      {
+        "code": "TLX5",
+        "name": "Hamleys - Vegas Mall Dwarka"
+      },
+      {
+        "code": "TM1H",
+        "name": "Pacific Mall"
+      },
+      {
+        "code": "THH2",
+        "name": "Pacific Mall - Delhi"
+      },
+      {
+        "code": "TXPH",
+        "name": "Ambala-NH1"
+      },
+      {
+        "code": "THF9",
+        "name": "Ambience Gurgaon Mall"
+      },
+      {
+        "code": "THE8",
+        "name": "Ambience Vasant Kunj - Delhi"
+      },
+      {
+        "code": "THM0",
+        "name": "Ardee Mall"
+      },
+      {
+        "code": "TAUN",
+        "name": "Clebration Mall - Udaipur"
+      },
+      {
+        "code": "TXR2",
+        "name": "Dhillon Plaza"
+      },
+      {
+        "code": "TXYT",
+        "name": "Good Earth - Gurgaon"
+      },
+      {
+        "code": "TL6O",
+        "name": "Ham.Irisbrdway"
+      },
+      {
+        "code": "TF5T",
+        "name": "Ham.PacificMal"
+      },
+      {
+        "code": "TJY4",
+        "name": "Hamleys - Ham.Airia.Grgn"
+      },
+      {
+        "code": "THH3",
+        "name": "Select City Mall - Delhi"
+      },
+      {
+        "code": "TBDE",
+        "name": "Summit plaza"
+      },
+      {
+        "code": "TB6V",
+        "name": "Unity Elegante Delhi"
+      },
+      {
+        "code": "TXUT",
+        "name": "Vaishali - Jaipur"
+      },
+      {
+        "code": "THI7",
+        "name": "WTP - Jaipur"
+      },
+      {
+        "code": "TAHY",
+        "name": "World Mark Gurgaon"
+      }
+    ],
+    "Ashlin Moses": [
+      {
+        "code": "TPV5",
+        "name": "Airport Departure - Blr"
+      },
+      {
+        "code": "T36H",
+        "name": "Falcon City - Blr"
+      },
+      {
+        "code": "TXGB",
+        "name": "HSR Layout - Blr"
+      },
+      {
+        "code": "TK0G",
+        "name": "Ham.GarudaMall"
+      },
+      {
+        "code": "TBAV",
+        "name": "Ham.Lakeshore Hyd"
+      },
+      {
+        "code": "TL9A",
+        "name": "Hamleys - Ham.LuluBlr"
+      },
+      {
+        "code": "TXSG",
+        "name": "Indiranagar - Blr"
+      },
+      {
+        "code": "T2MI",
+        "name": "Mall Of Asia - Blr"
+      },
+      {
+        "code": "THE0",
+        "name": "Phoenix Marketcity - Blr"
+      },
+      {
+        "code": "T36O",
+        "name": "T2 Airport - Blr"
+      },
+      {
+        "code": "THO9",
+        "name": "UB City - Blr"
+      },
+      {
+        "code": "TZ8Z",
+        "name": "Vega City Mall - Blr"
+      },
+      {
+        "code": "TWR1",
+        "name": "Walter Main Rd - Vizag"
+      },
+      {
+        "code": "THG4",
+        "name": "1 MG - Lido Mall - Blr"
+      },
+      {
+        "code": "TPV4",
+        "name": "Airport Arrival - Blr"
+      },
+      {
+        "code": "TXSI",
+        "name": "Banjara Hills - Hyd"
+      },
+      {
+        "code": "T27V",
+        "name": "Bellandur - Blr"
+      },
+      {
+        "code": "THR0",
+        "name": "D-Address Mall - Vijayawada"
+      },
+      {
+        "code": "TJU4",
+        "name": "DSL Virtue Mall - Hyd"
+      },
+      {
+        "code": "THG3",
+        "name": "Forum Sujana Mall - Hyd"
+      },
+      {
+        "code": "TJU3",
+        "name": "GSM Mall - Hyd"
+      },
+      {
+        "code": "T9F6",
+        "name": "Ham.Inorbit Hubli"
+      },
+      {
+        "code": "THJ0",
+        "name": "Inorbit Mall - Hyd"
+      },
+      {
+        "code": "THN3",
+        "name": "L&T Mall - Hyd"
+      },
+      {
+        "code": "THQ2",
+        "name": "Nexus Centre City - Mys"
+      },
+      {
+        "code": "THO8",
+        "name": "Nexus Shantiniketan Mall - Blr"
+      },
+      {
+        "code": "THS5",
+        "name": "Orion Mall - Blr"
+      },
+      {
+        "code": "THP5",
+        "name": "Sarath City Capital Mall - Hyd"
+      },
+      {
+        "code": "TNP7",
+        "name": "Vijay Store"
+      }
+    ],
+    "Chetan Chaudhari": [
+      {
+        "code": "T6AA",
+        "name": "Ham - Prozone, Aurangabad"
+      },
+      {
+        "code": "T26L",
+        "name": "Ham - Kopa.Pune"
+      },
+      {
+        "code": "THP2",
+        "name": "Hamleys - C21, Indore"
+      },
+      {
+        "code": "THS7",
+        "name": "Hamleys - CtyCntr"
+      },
+      {
+        "code": "THQ3",
+        "name": "Hamleys - Forum"
+      },
+      {
+        "code": "THF4",
+        "name": "Hamleys - Quest"
+      },
+      {
+        "code": "THI5",
+        "name": "Hamleys - Siligur"
+      },
+      {
+        "code": "THR3",
+        "name": "Hamleys - South city"
+      },
+      {
+        "code": "THG2",
+        "name": "Hamleys - Treasure Island, Indore"
+      },
+      {
+        "code": "THN6",
+        "name": "Hamleys - Utkal"
+      },
+      {
+        "code": "T2UO",
+        "name": "Ham - Mall of Millienimium, Pune"
+      },
+      {
+        "code": "T34O",
+        "name": "Ham - Phoenix Citadel Indore"
+      },
+      {
+        "code": "TZKY",
+        "name": "Ham.Guwahati.Arr"
+      },
+      {
+        "code": "TZKZ",
+        "name": "Ham.Guwahati.Dep"
+      },
+      {
+        "code": "THI2",
+        "name": "Hamleys - ICC, Pune"
+      },
+      {
+        "code": "THN2",
+        "name": "Hamleys - Nucleus"
+      },
+      {
+        "code": "THE4",
+        "name": "Hamleys - PMC, Pune"
+      },
+      {
+        "code": "TC7G",
+        "name": "Hamleys Cafe MOM"
+      }
+    ],
+    "Divya Lakshmi": [
+      {
+        "code": "THF1",
+        "name": "Brookefields Mall - Coimbatore"
+      },
+      {
+        "code": "THD8",
+        "name": "Express Avenue - Chennai"
+      },
+      {
+        "code": "T2WF",
+        "name": "Forum Mall - Kochi"
+      },
+      {
+        "code": "T42A",
+        "name": "Lulu Mall Trivandrum"
+      },
+      {
+        "code": "THG7",
+        "name": "Nexus Vijaya Mall - Chennai"
+      },
+      {
+        "code": "THF0",
+        "name": "Phoenix Marketcity - Chennai"
+      },
+      {
+        "code": "T61F",
+        "name": "Phoenix Marketcity Play - Chennai"
+      },
+      {
+        "code": "THP1",
+        "name": "VR Mall - Chennai"
+      },
+      {
+        "code": "TUW4",
+        "name": "Gokulam Galleria - Calicut"
+      },
+      {
+        "code": "TL6C",
+        "name": "Ham.Marina"
+      },
+      {
+        "code": "TY7V",
+        "name": "Hilite mall - Calicut"
+      },
+      {
+        "code": "THG0",
+        "name": "Lulu International Mall - Kochi"
+      },
+      {
+        "code": "THI3",
+        "name": "Prozone mall - Coimbatore"
+      },
+      {
+        "code": "T7UJ",
+        "name": "T1 Arrival - Chennai"
+      }
+    ],
+    "Lalit Mohan": [
+      {
+        "code": "THJ1",
+        "name": "Alfa one 1 - Amritsar"
+      },
+      {
+        "code": "THS8",
+        "name": "Gaur City - Noida"
+      },
+      {
+        "code": "T2DK",
+        "name": "Ham, Lucknow Arrival"
+      },
+      {
+        "code": "T2DE",
+        "name": "Ham,Lucknow Dept"
+      },
+      {
+        "code": "T0ZV",
+        "name": "Ham. DelhiT1D"
+      },
+      {
+        "code": "TM1F",
+        "name": "Ham.Model Town"
+      },
+      {
+        "code": "THF8",
+        "name": "Hamleys - DelhiT3"
+      },
+      {
+        "code": "TASG",
+        "name": "Hamleys - T1A"
+      },
+      {
+        "code": "TZ8A",
+        "name": "Hamleys- Dehradun"
+      },
+      {
+        "code": "THF2",
+        "name": "Logic City Centre - Noida"
+      },
+      {
+        "code": "T38E",
+        "name": "Lulu Mall - Lucknow"
+      },
+      {
+        "code": "THK0",
+        "name": "Mall of India - Noida"
+      },
+      {
+        "code": "THG8",
+        "name": "Pavilion Mall - Ludhia"
+      },
+      {
+        "code": "THP0",
+        "name": "Reliance Mall - Jalandha"
+      },
+      {
+        "code": "THP7",
+        "name": "Wave Mall - Jammu"
+      },
+      {
+        "code": "THM2",
+        "name": "Zaquare Kanpur"
+      },
+      {
+        "code": "TBC7",
+        "name": "Creekside Doraha P"
+      },
+      {
+        "code": "THI0",
+        "name": "Hamleys - T3Depar"
+      },
+      {
+        "code": "TJU6",
+        "name": "Palsssio Mall - Lucknow"
+      }
+    ],
+    "Shirish Mastud": [
+      {
+        "code": "T5PF",
+        "name": "Ham - Ahmedabad Arriaval"
+      },
+      {
+        "code": "T42C",
+        "name": "Ham - Goa Airport"
+      },
+      {
+        "code": "TB2O",
+        "name": "Ham - HSP.FF"
+      },
+      {
+        "code": "TB2N",
+        "name": "Ham - HSP.GF"
+      },
+      {
+        "code": "T8LI",
+        "name": "Ham - Kurla, PMC"
+      },
+      {
+        "code": "T77X",
+        "name": "Ham - Palladium Ahmedabad"
+      },
+      {
+        "code": "T7ZN",
+        "name": "Ham - Rcity Mall, Ghatkopar"
+      },
+      {
+        "code": "THS6",
+        "name": "Ham. Golden Icon"
+      },
+      {
+        "code": "TF5Y",
+        "name": "Ham. Sky City"
+      },
+      {
+        "code": "THG5",
+        "name": "Ham.Inorbit Vododara"
+      },
+      {
+        "code": "TBIM",
+        "name": "Ham.ZoraMall"
+      },
+      {
+        "code": "THE2",
+        "name": "Hamleys - Alpha One, Ahmedabad"
+      },
+      {
+        "code": "THD9",
+        "name": "Hamleys - Infinty, Malad"
+      },
+      {
+        "code": "TY4T",
+        "name": "Hamleys - JWD"
+      },
+      {
+        "code": "THF6",
+        "name": "Hamleys - MUMArpt"
+      },
+      {
+        "code": "THM8",
+        "name": "Hamleys - Mall De, Goa"
+      },
+      {
+        "code": "THH8",
+        "name": "Hamleys - Nexus Seawood"
+      },
+      {
+        "code": "THJ2",
+        "name": "Hamleys - Oberoi, Goregaon"
+      },
+      {
+        "code": "THK1",
+        "name": "Hamleys - Surat"
+      },
+      {
+        "code": "THJ4",
+        "name": "Hamleys - T2 Arrival"
+      },
+      {
+        "code": "THE9",
+        "name": "Hamleys - Viviana, Thane"
+      },
+      {
+        "code": "THI9",
+        "name": "Hamleys - Xperia, Dombivali"
+      },
+      {
+        "code": "T7ER",
+        "name": "Ham - Jamnagar Play"
+      },
+      {
+        "code": "T3AA",
+        "name": "Ham - Rajkot"
+      },
+      {
+        "code": "TL6N",
+        "name": "Ham.Relgreen"
+      },
+      {
+        "code": "THQ0",
+        "name": "Hamleys - Ambuja, Raipur"
+      },
+      {
+        "code": "THG9",
+        "name": "Hamleys - DB City, Bhopal"
+      },
+      {
+        "code": "TMA0",
+        "name": "Hamleys - HN Hospital"
+      },
+      {
+        "code": "TLY7",
+        "name": "Hamleys - Maker Max, JWD"
+      },
+      {
+        "code": "THI8",
+        "name": "Hamleys - T1 Arrival"
+      },
+      {
+        "code": "TMX4",
+        "name": "Hamleys - TWC, JWD"
+      },
+      {
+        "code": "TM1S",
+        "name": "Hamleys -Navi Mumbai, Arpt"
+      }
+    ]
+  },
+  "compliance": {
+    "Ajay Gill": {
+      "Monday": {
+        "completed": [
+          "T2DD",
+          "THE1",
+          "TLX5",
+          "TM1H",
+          "THH2"
+        ],
+        "missed": [
+          "TXPH",
+          "THF9",
+          "THE8",
+          "THM0",
+          "TAUN",
+          "TXR2",
+          "TXYT",
+          "TL6O",
+          "TF5T",
+          "TJY4",
+          "THH3",
+          "TBDE",
+          "TB6V",
+          "TXUT",
+          "THI7",
+          "TAHY"
+        ],
+        "count": 5
+      },
+      "Tuesday": {
+        "completed": [
+          "TXPH",
+          "T2DD",
+          "THE1"
+        ],
+        "missed": [
+          "THF9",
+          "THE8",
+          "THM0",
+          "TAUN",
+          "TXR2",
+          "TXYT",
+          "TL6O",
+          "TF5T",
+          "TJY4",
+          "TLX5",
+          "TM1H",
+          "THH2",
+          "THH3",
+          "TBDE",
+          "TB6V",
+          "TXUT",
+          "THI7",
+          "TAHY"
+        ],
+        "count": 3
+      },
+      "Wednesday": {
+        "completed": [
+          "TXPH",
+          "TAUN",
+          "T2DD"
+        ],
+        "missed": [
+          "THF9",
+          "THE8",
+          "THM0",
+          "TXR2",
+          "TXYT",
+          "TL6O",
+          "TF5T",
+          "THE1",
+          "TJY4",
+          "TLX5",
+          "TM1H",
+          "THH2",
+          "THH3",
+          "TBDE",
+          "TB6V",
+          "TXUT",
+          "THI7",
+          "TAHY"
+        ],
+        "count": 3
+      },
+      "Thursday": {
+        "completed": [
+          "TXPH",
+          "TAUN",
+          "T2DD",
+          "THE1"
+        ],
+        "missed": [
+          "THF9",
+          "THE8",
+          "THM0",
+          "TXR2",
+          "TXYT",
+          "TL6O",
+          "TF5T",
+          "TJY4",
+          "TLX5",
+          "TM1H",
+          "THH2",
+          "THH3",
+          "TBDE",
+          "TB6V",
+          "TXUT",
+          "THI7",
+          "TAHY"
+        ],
+        "count": 4
+      }
+    },
+    "Ashlin Moses": {
+      "Monday": {
+        "completed": [
+          "TPV5",
+          "T36H",
+          "TXGB",
+          "TK0G",
+          "TBAV",
+          "TL9A",
+          "TXSG",
+          "T2MI",
+          "THE0",
+          "T36O",
+          "THO9",
+          "TZ8Z",
+          "TWR1"
+        ],
+        "missed": [
+          "THG4",
+          "TPV4",
+          "TXSI",
+          "T27V",
+          "THR0",
+          "TJU4",
+          "THG3",
+          "TJU3",
+          "T9F6",
+          "THJ0",
+          "THN3",
+          "THQ2",
+          "THO8",
+          "THS5",
+          "THP5",
+          "TNP7"
+        ],
+        "count": 13
+      },
+      "Tuesday": {
+        "completed": [
+          "TPV5",
+          "TXSI",
+          "THR0",
+          "TJU4",
+          "T36H",
+          "THG3",
+          "TJU3",
+          "TXGB",
+          "TBAV",
+          "TL9A",
+          "THJ0",
+          "THQ2",
+          "THO8",
+          "THE0",
+          "THP5",
+          "T36O",
+          "THO9",
+          "TZ8Z",
+          "TWR1"
+        ],
+        "missed": [
+          "THG4",
+          "TPV4",
+          "T27V",
+          "TK0G",
+          "T9F6",
+          "TXSG",
+          "THN3",
+          "T2MI",
+          "THS5",
+          "TNP7"
+        ],
+        "count": 19
+      },
+      "Wednesday": {
+        "completed": [
+          "TPV5",
+          "TXGB",
+          "TL9A",
+          "THQ2",
+          "THE0",
+          "T36O",
+          "TZ8Z",
+          "TWR1"
+        ],
+        "missed": [
+          "THG4",
+          "TPV4",
+          "TXSI",
+          "T27V",
+          "THR0",
+          "TJU4",
+          "T36H",
+          "THG3",
+          "TJU3",
+          "TK0G",
+          "T9F6",
+          "TBAV",
+          "TXSG",
+          "THJ0",
+          "THN3",
+          "T2MI",
+          "THO8",
+          "THS5",
+          "THP5",
+          "THO9",
+          "TNP7"
+        ],
+        "count": 8
+      },
+      "Thursday": {
+        "completed": [
+          "T36H",
+          "TXGB",
+          "TL9A",
+          "TWR1"
+        ],
+        "missed": [
+          "THG4",
+          "TPV4",
+          "TPV5",
+          "TXSI",
+          "T27V",
+          "THR0",
+          "TJU4",
+          "THG3",
+          "TJU3",
+          "TK0G",
+          "T9F6",
+          "TBAV",
+          "TXSG",
+          "THJ0",
+          "THN3",
+          "T2MI",
+          "THQ2",
+          "THO8",
+          "THS5",
+          "THE0",
+          "THP5",
+          "T36O",
+          "THO9",
+          "TZ8Z",
+          "TNP7"
+        ],
+        "count": 4
+      }
+    },
+    "Chetan Chaudhari": {
+      "Monday": {
+        "completed": [
+          "T6AA",
+          "T26L",
+          "THP2",
+          "THS7",
+          "THQ3",
+          "THF4",
+          "THI5",
+          "THR3",
+          "THG2",
+          "THN6"
+        ],
+        "missed": [
+          "T2UO",
+          "T34O",
+          "TZKY",
+          "TZKZ",
+          "THI2",
+          "THN2",
+          "THE4",
+          "TC7G"
+        ],
+        "count": 10
+      },
+      "Tuesday": {
+        "completed": [
+          "T6AA",
+          "THP2",
+          "THS7",
+          "THQ3",
+          "THF4",
+          "THI5",
+          "THR3",
+          "THG2"
+        ],
+        "missed": [
+          "T26L",
+          "T2UO",
+          "T34O",
+          "TZKY",
+          "TZKZ",
+          "THI2",
+          "THN2",
+          "THE4",
+          "THN6",
+          "TC7G"
+        ],
+        "count": 8
+      },
+      "Wednesday": {
+        "completed": [
+          "T6AA",
+          "THP2",
+          "THS7",
+          "THQ3",
+          "THN2",
+          "THI5",
+          "THR3",
+          "THG2",
+          "THN6"
+        ],
+        "missed": [
+          "T26L",
+          "T2UO",
+          "T34O",
+          "TZKY",
+          "TZKZ",
+          "THI2",
+          "THE4",
+          "THF4",
+          "TC7G"
+        ],
+        "count": 9
+      },
+      "Thursday": {
+        "completed": [
+          "T6AA",
+          "THP2",
+          "THS7",
+          "THQ3",
+          "THN2",
+          "THF4",
+          "THR3",
+          "THG2",
+          "THN6"
+        ],
+        "missed": [
+          "T26L",
+          "T2UO",
+          "T34O",
+          "TZKY",
+          "TZKZ",
+          "THI2",
+          "THE4",
+          "THI5",
+          "TC7G"
+        ],
+        "count": 9
+      }
+    },
+    "Divya Lakshmi": {
+      "Monday": {
+        "completed": [
+          "THF1",
+          "THD8",
+          "T2WF",
+          "T42A",
+          "THG7",
+          "THF0",
+          "T61F",
+          "THP1"
+        ],
+        "missed": [
+          "TUW4",
+          "TL6C",
+          "TY7V",
+          "THG0",
+          "THI3",
+          "T7UJ"
+        ],
+        "count": 8
+      },
+      "Tuesday": {
+        "completed": [
+          "THF1",
+          "THD8",
+          "T42A",
+          "THG7",
+          "THF0",
+          "T61F"
+        ],
+        "missed": [
+          "T2WF",
+          "TUW4",
+          "TL6C",
+          "TY7V",
+          "THG0",
+          "THI3",
+          "T7UJ",
+          "THP1"
+        ],
+        "count": 6
+      },
+      "Wednesday": {
+        "completed": [
+          "THF1",
+          "THF0"
+        ],
+        "missed": [
+          "THD8",
+          "T2WF",
+          "TUW4",
+          "TL6C",
+          "TY7V",
+          "THG0",
+          "T42A",
+          "THG7",
+          "T61F",
+          "THI3",
+          "T7UJ",
+          "THP1"
+        ],
+        "count": 2
+      },
+      "Thursday": {
+        "completed": [
+          "THF1",
+          "THF0"
+        ],
+        "missed": [
+          "THD8",
+          "T2WF",
+          "TUW4",
+          "TL6C",
+          "TY7V",
+          "THG0",
+          "T42A",
+          "THG7",
+          "T61F",
+          "THI3",
+          "T7UJ",
+          "THP1"
+        ],
+        "count": 2
+      }
+    },
+    "Lalit Mohan": {
+      "Monday": {
+        "completed": [
+          "THJ1",
+          "THS8",
+          "T2DK",
+          "T2DE",
+          "T0ZV",
+          "TM1F",
+          "THF8",
+          "TASG",
+          "TZ8A",
+          "THF2",
+          "T38E",
+          "THK0",
+          "THG8",
+          "THP0",
+          "THP7",
+          "THM2"
+        ],
+        "missed": [
+          "TBC7",
+          "THI0",
+          "TJU6"
+        ],
+        "count": 16
+      },
+      "Tuesday": {
+        "completed": [
+          "THJ1",
+          "THS8",
+          "T2DE",
+          "THF8",
+          "TASG",
+          "TZ8A",
+          "T38E",
+          "THK0",
+          "TJU6",
+          "THG8",
+          "THP7",
+          "THM2"
+        ],
+        "missed": [
+          "TBC7",
+          "T2DK",
+          "T0ZV",
+          "TM1F",
+          "THI0",
+          "THF2",
+          "THP0"
+        ],
+        "count": 12
+      },
+      "Wednesday": {
+        "completed": [
+          "THJ1",
+          "THS8",
+          "T0ZV",
+          "TM1F",
+          "THF8",
+          "TASG",
+          "T38E",
+          "THK0",
+          "TJU6",
+          "THG8",
+          "THP7"
+        ],
+        "missed": [
+          "TBC7",
+          "T2DK",
+          "T2DE",
+          "THI0",
+          "TZ8A",
+          "THF2",
+          "THP0",
+          "THM2"
+        ],
+        "count": 11
+      },
+      "Thursday": {
+        "completed": [
+          "THJ1",
+          "TM1F",
+          "THF8",
+          "TASG",
+          "T38E",
+          "THK0",
+          "TJU6",
+          "THP7"
+        ],
+        "missed": [
+          "TBC7",
+          "THS8",
+          "T2DK",
+          "T2DE",
+          "T0ZV",
+          "THI0",
+          "TZ8A",
+          "THF2",
+          "THG8",
+          "THP0",
+          "THM2"
+        ],
+        "count": 8
+      }
+    },
+    "Shirish Mastud": {
+      "Monday": {
+        "completed": [
+          "T5PF",
+          "T42C",
+          "TB2O",
+          "TB2N",
+          "T8LI",
+          "T77X",
+          "T7ZN",
+          "THS6",
+          "TF5Y",
+          "THG5",
+          "TBIM",
+          "THE2",
+          "THD9",
+          "TY4T",
+          "THF6",
+          "THM8",
+          "THH8",
+          "THJ2",
+          "THK1",
+          "THJ4",
+          "THE9",
+          "THI9"
+        ],
+        "missed": [
+          "T7ER",
+          "T3AA",
+          "TL6N",
+          "THQ0",
+          "THG9",
+          "TMA0",
+          "TLY7",
+          "THI8",
+          "TMX4",
+          "TM1S"
+        ],
+        "count": 22
+      },
+      "Tuesday": {
+        "completed": [
+          "T5PF",
+          "T42C",
+          "TB2O",
+          "TB2N",
+          "T8LI",
+          "T77X",
+          "T7ZN",
+          "THS6",
+          "TF5Y",
+          "THG5",
+          "TBIM",
+          "THE2",
+          "THQ0",
+          "TY4T",
+          "THM8",
+          "THH8",
+          "THJ2",
+          "THK1",
+          "THI8",
+          "THJ4",
+          "THE9",
+          "THI9"
+        ],
+        "missed": [
+          "T7ER",
+          "T3AA",
+          "TL6N",
+          "THG9",
+          "TMA0",
+          "THD9",
+          "THF6",
+          "TLY7",
+          "TMX4",
+          "TM1S"
+        ],
+        "count": 22
+      },
+      "Wednesday": {
+        "completed": [
+          "T5PF",
+          "T42C",
+          "TB2O",
+          "T8LI",
+          "T77X",
+          "T7ZN",
+          "THS6",
+          "THG5",
+          "TBIM",
+          "THE2",
+          "THQ0",
+          "TY4T",
+          "THM8",
+          "THH8",
+          "THJ2",
+          "THK1",
+          "THI8",
+          "THJ4",
+          "THE9",
+          "THI9"
+        ],
+        "missed": [
+          "TB2N",
+          "T7ER",
+          "T3AA",
+          "TF5Y",
+          "TL6N",
+          "THG9",
+          "TMA0",
+          "THD9",
+          "THF6",
+          "TLY7",
+          "TMX4",
+          "TM1S"
+        ],
+        "count": 20
+      },
+      "Thursday": {
+        "completed": [
+          "TB2O",
+          "T8LI",
+          "T77X",
+          "T7ZN",
+          "THS6",
+          "TF5Y",
+          "THG5",
+          "THE2",
+          "THG9",
+          "TY4T",
+          "THH8",
+          "THJ2",
+          "THK1",
+          "THI8",
+          "THJ4",
+          "THE9",
+          "THI9"
+        ],
+        "missed": [
+          "T5PF",
+          "T42C",
+          "TB2N",
+          "T7ER",
+          "T3AA",
+          "TL6N",
+          "TBIM",
+          "THQ0",
+          "TMA0",
+          "THD9",
+          "THF6",
+          "TLY7",
+          "THM8",
+          "TMX4",
+          "TM1S"
+        ],
+        "count": 17
+      }
+    }
+  },
+  "weekLabel": "18 \u2013 21 May 2026",
+  "weekDays": [
+    {
+      "day": "Monday",
+      "date": "2026-05-18",
+      "dateLabel": "18 May"
+    },
+    {
+      "day": "Tuesday",
+      "date": "2026-05-19",
+      "dateLabel": "19 May"
+    },
+    {
+      "day": "Wednesday",
+      "date": "2026-05-20",
+      "dateLabel": "20 May"
+    },
+    {
+      "day": "Thursday",
+      "date": "2026-05-21",
+      "dateLabel": "21 May"
+    }
+  ],
+  "lastUpdated": "2026-05-25"
+}
