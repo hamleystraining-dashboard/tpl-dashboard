@@ -690,28 +690,6 @@
       "2026-05-19": {
         "day": "Tuesday",
         "completed": [
-          "T42A",
-          "THF0",
-          "THD8",
-          "T61F",
-          "THG7",
-          "THF1",
-          "TY7V"
-        ],
-        "missed": [
-          "THG0",
-          "THI3",
-          "THP1",
-          "TUW4",
-          "TL6C",
-          "T2WF",
-          "T7UJ"
-        ],
-        "count": 7
-      },
-      "2026-05-20": {
-        "day": "Wednesday",
-        "completed": [
           "THF0",
           "THF1",
           "T42A",
@@ -729,6 +707,28 @@
           "T7UJ"
         ],
         "count": 4
+      },
+      "2026-05-20": {
+        "day": "Wednesday",
+        "completed": [
+          "THF0",
+          "THF1",
+          "THG9",
+          "T2WF",
+          "T42A",
+          "TY7V"
+        ],
+        "missed": [
+          "THD8",
+          "THG0",
+          "THG7",
+          "THI3",
+          "THP1",
+          "TUW4",
+          "TL6C",
+          "T7UJ"
+        ],
+        "count": 6
       },
       "2026-05-21": {
         "day": "Thursday",
@@ -756,7 +756,11 @@
         "day": "Monday",
         "completed": [
           "THF0",
-          "THG9"
+          "THG9",
+          "TUW4",
+          "T7UJ",
+          "TY7V",
+          "T42A"
         ],
         "missed": [
           "THD8",
@@ -765,14 +769,10 @@
           "THG7",
           "THI3",
           "THP1",
-          "TUW4",
-          "TY7V",
-          "T42A",
           "TL6C",
-          "T2WF",
-          "T7UJ"
+          "T2WF"
         ],
-        "count": 2
+        "count": 6
       },
       "2026-05-26": {
         "day": "Tuesday",
@@ -817,58 +817,23 @@
           "T5PF",
           "THS6",
           "THK1",
-          "T8LI",
+          "THI8",
+          "THQ0",
           "THE9",
           "THI9",
+          "T8LI",
           "TY4T",
           "THG5"
         ],
         "missed": [
           "THG9",
-          "THI8",
-          "THQ0",
           "TMA0",
           "T3AA"
         ],
-        "count": 22
+        "count": 24
       },
       "2026-05-19": {
         "day": "Tuesday",
-        "completed": [
-          "THJ4",
-          "THI8",
-          "THK1",
-          "TB2N",
-          "TB2O",
-          "T77X",
-          "THQ0",
-          "TF5Y",
-          "THE2",
-          "THH8",
-          "T7ZN",
-          "T5PF",
-          "THE9",
-          "THI9",
-          "T8LI",
-          "THM8",
-          "T42C",
-          "THS6",
-          "TBIM",
-          "TY4T",
-          "THG5",
-          "THJ2"
-        ],
-        "missed": [
-          "THD9",
-          "THF6",
-          "THG9",
-          "TMA0",
-          "T3AA"
-        ],
-        "count": 22
-      },
-      "2026-05-20": {
-        "day": "Wednesday",
         "completed": [
           "THH8",
           "TB2O",
@@ -902,6 +867,41 @@
           "TF5Y"
         ],
         "count": 20
+      },
+      "2026-05-20": {
+        "day": "Wednesday",
+        "completed": [
+          "THJ4",
+          "THI8",
+          "THE2",
+          "THK1",
+          "THE9",
+          "T77X",
+          "THH8",
+          "TF5Y",
+          "T7ZN",
+          "THI9",
+          "T8LI",
+          "TB2O",
+          "THG5",
+          "THJ2",
+          "TY4T",
+          "THS6",
+          "THM8",
+          "T42C"
+        ],
+        "missed": [
+          "THD9",
+          "THF6",
+          "THG9",
+          "THQ0",
+          "TMA0",
+          "T5PF",
+          "T3AA",
+          "TB2N",
+          "TBIM"
+        ],
+        "count": 18
       },
       "2026-05-21": {
         "day": "Thursday",
@@ -954,24 +954,24 @@
           "THK1",
           "TF5Y",
           "THS6",
-          "THG5"
+          "THG5",
+          "THE9",
+          "T8LI",
+          "THJ2"
         ],
         "missed": [
-          "THE9",
           "THF6",
           "THG9",
           "THH8",
           "THI8",
-          "THJ2",
           "THM8",
           "TMA0",
           "TY4T",
           "T42C",
-          "T8LI",
           "TB2N",
           "TB2O"
         ],
-        "count": 14
+        "count": 17
       },
       "2026-05-26": {
         "day": "Tuesday",
@@ -1022,66 +1022,30 @@
           "THO9",
           "THE0",
           "TZ8Z",
+          "THQ2",
           "TL9A",
           "T2MI",
           "T36O",
+          "THP5",
+          "TXSI",
+          "THR0",
+          "THJ0",
+          "THG3",
+          "TJU3",
+          "TJU4",
+          "THO8",
           "THS5"
         ],
         "missed": [
-          "THG3",
           "THG4",
-          "THJ0",
           "THN3",
-          "THO8",
-          "THP5",
-          "THQ2",
-          "THR0",
-          "TJU3",
-          "TJU4",
           "TPV4",
-          "TXSI",
           "T9F6"
         ],
-        "count": 14
+        "count": 23
       },
       "2026-05-19": {
         "day": "Tuesday",
-        "completed": [
-          "THQ2",
-          "TWR1",
-          "T2DE",
-          "TXGB",
-          "TL9A",
-          "TPV5",
-          "T36H",
-          "THP5",
-          "T36O",
-          "TBAV",
-          "TXSI",
-          "THR0",
-          "THJ0",
-          "THG3",
-          "TJU3",
-          "TJU4",
-          "TZ8Z",
-          "THO8",
-          "THE0",
-          "THS5"
-        ],
-        "missed": [
-          "THG4",
-          "THN3",
-          "THO9",
-          "TPV4",
-          "TXSG",
-          "TK0G",
-          "T2MI",
-          "T9F6"
-        ],
-        "count": 20
-      },
-      "2026-05-20": {
-        "day": "Wednesday",
         "completed": [
           "THO9",
           "THQ2",
@@ -1114,6 +1078,41 @@
           "T9F6"
         ],
         "count": 9
+      },
+      "2026-05-20": {
+        "day": "Wednesday",
+        "completed": [
+          "TWR1",
+          "TL9A",
+          "T36H",
+          "TXGB",
+          "THO9"
+        ],
+        "missed": [
+          "THE0",
+          "THG3",
+          "THG4",
+          "THJ0",
+          "THN3",
+          "THO8",
+          "THP5",
+          "THQ2",
+          "THR0",
+          "THS5",
+          "TJU3",
+          "TJU4",
+          "TPV4",
+          "TPV5",
+          "TXSG",
+          "TXSI",
+          "TZ8Z",
+          "T36O",
+          "TK0G",
+          "T2MI",
+          "TBAV",
+          "T9F6"
+        ],
+        "count": 5
       },
       "2026-05-21": {
         "day": "Thursday",
@@ -1173,17 +1172,17 @@
           "THS5",
           "TXSG",
           "THG4",
-          "THN3"
+          "THN3",
+          "THR0",
+          "TJU3"
         ],
         "missed": [
-          "THR0",
-          "TJU3",
           "TJU4",
           "TPV4",
           "TXSI",
           "T9F6"
         ],
-        "count": 21
+        "count": 23
       },
       "2026-05-26": {
         "day": "Tuesday",
@@ -1228,7 +1227,9 @@
           "T2DD",
           "THE1",
           "TM1H",
-          "TLX5"
+          "TLX5",
+          "TXPH",
+          "TXR2"
         ],
         "missed": [
           "THE8",
@@ -1237,8 +1238,6 @@
           "THI7",
           "THM0",
           "TJY4",
-          "TXPH",
-          "TXR2",
           "TXUT",
           "TXYT",
           "TF5T",
@@ -1246,37 +1245,10 @@
           "TL6O",
           "TB6V"
         ],
-        "count": 5
+        "count": 7
       },
       "2026-05-19": {
         "day": "Tuesday",
-        "completed": [
-          "TXPH",
-          "T2DD",
-          "THE1",
-          "TXR2"
-        ],
-        "missed": [
-          "THE8",
-          "THF9",
-          "THH2",
-          "THH3",
-          "THI7",
-          "THM0",
-          "TJY4",
-          "TLX5",
-          "TXUT",
-          "TXYT",
-          "TF5T",
-          "TAUN",
-          "TL6O",
-          "TB6V",
-          "TM1H"
-        ],
-        "count": 4
-      },
-      "2026-05-20": {
-        "day": "Wednesday",
         "completed": [
           "TXPH",
           "T2DD",
@@ -1302,13 +1274,13 @@
         ],
         "count": 3
       },
-      "2026-05-21": {
-        "day": "Thursday",
+      "2026-05-20": {
+        "day": "Wednesday",
         "completed": [
-          "THE1",
           "T2DD",
           "TXPH",
-          "TAUN"
+          "TAUN",
+          "THE1"
         ],
         "missed": [
           "THE8",
@@ -1329,10 +1301,36 @@
         ],
         "count": 4
       },
+      "2026-05-21": {
+        "day": "Thursday",
+        "completed": [
+          "TB6V"
+        ],
+        "missed": [
+          "THE1",
+          "THE8",
+          "THF9",
+          "THH2",
+          "THH3",
+          "THI7",
+          "THM0",
+          "TJY4",
+          "TLX5",
+          "TXPH",
+          "TXR2",
+          "TXUT",
+          "TXYT",
+          "TF5T",
+          "TAUN",
+          "T2DD",
+          "TL6O",
+          "TM1H"
+        ],
+        "count": 1
+      },
       "2026-05-25": {
         "day": "Monday",
         "completed": [
-          "TB6V",
           "THH2",
           "TXYT",
           "THM0",
@@ -1349,7 +1347,8 @@
           "TXUT",
           "THH3",
           "TJY4",
-          "TAUN"
+          "TAUN",
+          "TB6V"
         ],
         "missed": [
           "THF9",
@@ -1397,45 +1396,21 @@
           "THG2",
           "THR3",
           "THI5",
+          "THF4",
           "T34O"
         ],
         "missed": [
           "THE4",
-          "THF4",
           "THI2",
           "THN2",
           "TZKY",
           "TZKZ",
           "T2UO"
         ],
-        "count": 10
+        "count": 11
       },
       "2026-05-19": {
         "day": "Tuesday",
-        "completed": [
-          "THG2",
-          "T6AA",
-          "THI5",
-          "THQ3",
-          "THS7",
-          "THP2",
-          "THF4",
-          "THR3",
-          "T34O"
-        ],
-        "missed": [
-          "THE4",
-          "THI2",
-          "THN2",
-          "THN6",
-          "TZKY",
-          "TZKZ",
-          "T2UO"
-        ],
-        "count": 9
-      },
-      "2026-05-20": {
-        "day": "Wednesday",
         "completed": [
           "T6AA",
           "THK1",
@@ -1459,6 +1434,30 @@
           "T2UO"
         ],
         "count": 9
+      },
+      "2026-05-20": {
+        "day": "Wednesday",
+        "completed": [
+          "THP2",
+          "THG2",
+          "THQ3",
+          "THR3",
+          "THN6",
+          "THN2",
+          "THF4",
+          "T6AA",
+          "THS7",
+          "T34O"
+        ],
+        "missed": [
+          "THE4",
+          "THI2",
+          "THI5",
+          "TZKY",
+          "TZKZ",
+          "T2UO"
+        ],
+        "count": 10
       },
       "2026-05-21": {
         "day": "Thursday",
@@ -1490,23 +1489,23 @@
           "THS7",
           "THP2",
           "THI5",
-          "T6AA"
+          "T6AA",
+          "THQ3",
+          "THR3",
+          "T34O",
+          "THN2"
         ],
         "missed": [
           "THE4",
           "THF4",
           "THG2",
           "THI2",
-          "THN2",
           "THN6",
-          "THQ3",
-          "THR3",
           "TZKY",
           "TZKZ",
-          "T34O",
           "T2UO"
         ],
-        "count": 4
+        "count": 8
       },
       "2026-05-26": {
         "day": "Tuesday",
@@ -1551,44 +1550,17 @@
           "TASG",
           "THS8",
           "T2DK",
-          "THP7"
+          "THP7",
+          "TJU6"
         ],
         "missed": [
           "THI0",
-          "TJU6",
           "TBC7"
         ],
-        "count": 16
+        "count": 17
       },
       "2026-05-19": {
         "day": "Tuesday",
-        "completed": [
-          "THP7",
-          "TJU6",
-          "THK0",
-          "THF8",
-          "T38E",
-          "THS8",
-          "THM2",
-          "TASG",
-          "THJ1",
-          "THG8",
-          "TZ8A"
-        ],
-        "missed": [
-          "THF2",
-          "THI0",
-          "THP0",
-          "T2DE",
-          "T2DK",
-          "T0ZV",
-          "TBC7",
-          "TM1F"
-        ],
-        "count": 11
-      },
-      "2026-05-20": {
-        "day": "Wednesday",
         "completed": [
           "THF8",
           "T38E",
@@ -1613,6 +1585,33 @@
           "TBC7"
         ],
         "count": 11
+      },
+      "2026-05-20": {
+        "day": "Wednesday",
+        "completed": [
+          "TJU6",
+          "THK0",
+          "THF8",
+          "T38E",
+          "THJ1",
+          "THP7",
+          "TM1F",
+          "TASG"
+        ],
+        "missed": [
+          "THF2",
+          "THG8",
+          "THI0",
+          "THM2",
+          "THP0",
+          "THS8",
+          "TZ8A",
+          "T2DE",
+          "T2DK",
+          "T0ZV",
+          "TBC7"
+        ],
+        "count": 8
       },
       "2026-05-21": {
         "day": "Thursday",
@@ -1653,20 +1652,20 @@
           "THF2",
           "TJU6",
           "THS8",
-          "TM1F"
+          "TM1F",
+          "THK0",
+          "THP7"
         ],
         "missed": [
           "THG8",
           "THI0",
-          "THK0",
           "THP0",
-          "THP7",
           "TASG",
           "T2DE",
           "T2DK",
           "TBC7"
         ],
-        "count": 10
+        "count": 12
       },
       "2026-05-26": {
         "day": "Tuesday",
@@ -1697,59 +1696,63 @@
     }
   },
   "categoryByRom": {
-    "Divya Lakshmi": {
-      "Board Games": 1,
-      "Construction": 1,
-      "Girls": 1
-    },
     "Shirish Mastud": {
       "Board Games": 7,
-      "Boys": 3,
-      "Science": 3,
-      "Kidult": 1
+      "Kidult": 1,
+      "Boys": 4,
+      "Science": 4,
+      "Roleplay sets": 1
     },
     "Ashlin Moses": {
-      "Board Games": 13,
+      "Roleplay sets": 3,
+      "Board Games": 14,
       "Sports": 3,
-      "Roleplay sets": 2,
       "Lifestyle": 1,
       "Boys": 1,
       "Books and Accessories": 1
     },
     "Ajay Gill": {
+      "Ride-ons": 1,
       "Board Games": 7,
       "Boys": 3,
       "Sports": 2,
       "Kidult": 2,
       "Science": 2,
-      "Ride-ons": 1,
       "Roleplay sets": 1
     },
     "Chetan Chaudhari": {
-      "Board Games": 2,
       "Boys": 1,
-      "Roleplay sets": 1
+      "Roleplay sets": 1,
+      "Board Games": 4,
+      "Science": 1,
+      "Kidult": 1
+    },
+    "Divya Lakshmi": {
+      "Board Games": 3,
+      "Construction": 1,
+      "Girls": 1,
+      "Lifestyle": 1
     },
     "Lalit Mohan": {
-      "Board Games": 6,
-      "Boys": 2,
+      "Board Games": 7,
+      "Boys": 3,
       "Luvley": 1,
       "Sports": 1
     }
   },
   "categoryOverall": {
-    "Board Games": 36,
-    "Construction": 1,
-    "Girls": 1,
-    "Boys": 10,
-    "Science": 5,
-    "Kidult": 3,
-    "Sports": 6,
-    "Roleplay sets": 4,
-    "Lifestyle": 1,
-    "Books and Accessories": 1,
+    "Board Games": 42,
+    "Roleplay sets": 6,
     "Ride-ons": 1,
-    "Luvley": 1
+    "Kidult": 4,
+    "Boys": 12,
+    "Sports": 6,
+    "Construction": 1,
+    "Science": 7,
+    "Lifestyle": 2,
+    "Books and Accessories": 1,
+    "Luvley": 1,
+    "Girls": 1
   },
   "timeline": [
     {
@@ -1783,6 +1786,6 @@
       "dateLabel": "26 May"
     }
   ],
-  "weekLabel": "18 May \u2013 26 May 2026",
-  "lastUpdated": "2026-05-26"
+  "weekLabel": "18 May – 26 May 2026",
+  "lastUpdated": "2026-05-27"
 }
