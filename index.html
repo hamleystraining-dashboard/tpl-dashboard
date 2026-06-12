@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TPL Dashboard — Hamleys India</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#E8282A;--red-l:#FEE8E8;--red-d:#B51E20;
+  --gold:#F5A623;--gold-l:#FFF3DC;--gold-d:#C27D0A;
+  --green:#1D8348;--green-l:#E6F4ED;--green-d:#145A32;
+  --amber:#E67E22;--amber-l:#FEF0E2;
+  --blue:#1565C0;--blue-l:#E3F0FF;--blue-d:#0D47A1;
+  --purple:#7B1FA2;--gray-l:#F4F2EE;--gray-b:#DEE2E6;
+  --white:#fff;--bg:#F2EFE9;
+  --text:#1A1A2E;--text-s:#5A5A72;--text-xs:#9090A8;
+  --radius:12px;--radius-sm:8px;--radius-lg:16px;
+  --shadow:0 2px 16px rgba(0,0,0,.08);
+  --font:'Nunito',sans-serif;--font-b:'Nunito Sans',sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;font-size:14px;line-height:1.5;overflow-x:hidden}
+.toy-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.toy-bg svg{position:absolute}
+.app{display:flex;min-height:100vh;position:relative;z-index:1}
+.sidebar{width:230px;flex-shrink:0;background:linear-gradient(160deg,#E8282A 0%,#B51E20 100%);display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow:hidden;box-shadow:4px 0 24px rgba(232,40,42,.25)}
+.sidebar-logo{padding:22px 20px 16px;border-bottom:1px solid rgba(255,255,255,.18)}
+.logo-mark{font-size:26px;font-weight:900;color:#fff;letter-spacing:-1px;display:flex;align-items:center;gap:8px}
+.logo-mark .star{color:var(--gold)}
+.logo-sub{font-size:10px;color:rgba(255,255,255,.6);margin-top:3px;letter-spacing:1.2px;font-family:var(--font-b);text-transform:uppercase}
+.last-upd{font-size:9px;color:rgba(255,255,255,.4);font-family:var(--font-b);margin-top:4px}
+.sidebar-nav{padding:14px 12px;flex:1;display:flex;flex-direction:column;gap:3px;overflow-y:auto}
+.nav-label{font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.4);padding:10px 10px 3px;font-family:var(--font-b);text-transform:uppercase}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;cursor:pointer;transition:all .2s;color:rgba(255,255,255,.78);font-size:13px;font-weight:700;border:none;background:none;width:100%;text-align:left;font-family:var(--font)}
+.nav-item:hover{background:rgba(255,255,255,.14);color:#fff}
+.nav-item.active{background:rgba(255,255,255,.22);color:#fff;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.nav-icon{width:18px;height:18px;flex-shrink:0;opacity:.85}
+.sidebar-bottom{padding:14px 16px;border-top:1px solid rgba(255,255,255,.15)}
+.week-pill{background:rgba(255,255,255,.14);border-radius:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.18)}
+.week-pill .wl{font-size:9px;color:rgba(255,255,255,.55);letter-spacing:1px;text-transform:uppercase;font-family:var(--font-b)}
+.week-pill .wv{font-size:12px;font-weight:800;color:#fff;margin-top:2px}
+.main{flex:1;display:flex;flex-direction:column;min-width:0}
+/* LIVE SYNC BAR */
+.sync-bar{background:var(--white);border-bottom:1px solid var(--gray-b);padding:8px 28px;display:flex;align-items:center;gap:10px;font-size:11px;font-family:var(--font-b);color:var(--text-s)}
+.sync-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.sync-dot.live{background:var(--green);animation:pulse 2s infinite}
+.sync-dot.loading{background:var(--gold);animation:pulse .6s infinite}
+.sync-dot.error{background:var(--red)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.sync-btn{margin-left:auto;padding:4px 12px;background:var(--gray-l);border:1.5px solid var(--gray-b);border-radius:6px;font-family:var(--font);font-size:11px;font-weight:800;cursor:pointer;color:var(--text-s);transition:all .2s}
+.sync-btn:hover{border-color:var(--red);color:var(--red)}
+.topbar{background:var(--white);border-bottom:1.5px solid var(--gray-b);padding:14px 28px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:10;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.page-title{font-size:20px;font-weight:900;color:var(--text);letter-spacing:-.5px}
+.page-sub{font-size:11px;color:var(--text-s);font-family:var(--font-b);margin-top:1px}
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.legend-row{display:flex;align-items:center;gap:12px;font-size:11px;font-family:var(--font-b);color:var(--text-s)}
+.legend-item{display:flex;align-items:center;gap:4px;font-weight:700}
+.ldot{width:10px;height:10px;border-radius:50%}
+.ldot.g{background:var(--green)}.ldot.a{background:var(--amber)}.ldot.r{background:var(--red)}.ldot.k{background:var(--gold)}
+.content{padding:22px 28px;flex:1;display:flex;flex-direction:column;gap:18px}
+.card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+.card-header{padding:16px 20px 14px;display:flex;align-items:flex-start;justify-content:space-between;border-bottom:1px solid var(--gray-b)}
+.card-title{font-size:15px;font-weight:900;color:var(--text);letter-spacing:-.3px}
+.card-sub{font-size:11px;color:var(--text-s);font-family:var(--font-b);margin-top:2px}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat-card{border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:18px 20px;position:relative;overflow:hidden;color:#fff}
+.sc-label{font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;opacity:.75;font-family:var(--font-b)}
+.sc-val{font-size:30px;font-weight:900;letter-spacing:-1.5px;line-height:1.1;margin:4px 0 2px}
+.sc-sub{font-size:11px;opacity:.8;font-family:var(--font-b)}
+.sc-deco{position:absolute;right:-10px;top:-10px;font-size:64px;opacity:.12;line-height:1}
+.sc-red{background:linear-gradient(135deg,#E8282A,#B51E20)}
+.sc-gold{background:linear-gradient(135deg,#F5A623,#C27D0A)}
+.sc-green{background:linear-gradient(135deg,#1D8348,#145A32)}
+.sc-blue{background:linear-gradient(135deg,#1565C0,#0D47A1)}
+.pct{display:inline-flex;align-items:center;justify-content:center;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:800;font-family:var(--font);min-width:54px}
+.pct.g{background:var(--green-l);color:var(--green-d)}.pct.a{background:var(--amber-l);color:var(--amber)}.pct.r{background:var(--red-l);color:var(--red-d)}.pct.n{background:var(--gold-l);color:var(--gold-d)}
+.check{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:12px;font-weight:900}
+.check.y{background:var(--green-l);color:var(--green)}.check.nn{background:var(--red-l);color:var(--red-d)}.check.skip{background:var(--gold-l);color:var(--gold-d)}
+.tpl-table{width:100%;border-collapse:collapse;font-size:13px}
+.tpl-table th{font-size:10px;font-weight:800;color:var(--text-xs);text-transform:uppercase;letter-spacing:.7px;padding:9px 14px;text-align:left;font-family:var(--font-b);border-bottom:2px solid var(--gray-b);background:var(--gray-l);white-space:nowrap}
+.tpl-table td{padding:11px 14px;border-bottom:1px solid var(--gray-b);vertical-align:middle}
+.tpl-table tr:last-child td{border-bottom:none}
+.tpl-table tbody tr:hover td{background:#FAFAF8}
+.rom-chip{display:inline-flex;align-items:center;gap:7px;font-weight:800;font-size:13px}
+.rom-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.act-pill{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:900;margin-left:4px}
+.act-t{background:#FEE8E8;color:#B51E20}.act-o{background:#E3F0FF;color:#0D47A1}.act-y{background:#E6F4ED;color:#145A32}.act-s{background:#FFF3DC;color:#C27D0A}
+.store-name{font-weight:800;font-size:13px}
+.store-code{font-size:10px;color:var(--text-xs);font-family:monospace;background:var(--gray-l);padding:2px 6px;border-radius:4px;margin-left:6px;border:1px solid var(--gray-b)}
+.filter-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--gray-b)}
+.filter-lbl{font-size:11px;font-weight:800;color:var(--text-s);font-family:var(--font-b);white-space:nowrap}
+.filter-sel{padding:7px 12px;border:1.5px solid var(--gray-b);border-radius:8px;font-family:var(--font);font-size:13px;font-weight:700;color:var(--text);background:var(--white);cursor:pointer;outline:none}
+.filter-sel:focus{border-color:var(--red)}
+.filter-spacer{flex:1}
+.weekly-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.wk-card{border-radius:var(--radius-lg);padding:16px;text-align:center;box-shadow:var(--shadow)}
+.wkc-name{font-size:11px;font-weight:800;color:rgba(255,255,255,.8);font-family:var(--font-b);margin-bottom:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wkc-pct{font-size:32px;font-weight:900;letter-spacing:-1.5px;line-height:1;color:#fff}
+.wkc-det{font-size:10px;color:rgba(255,255,255,.7);font-family:var(--font-b);margin-top:5px}
+.wk-bar{height:5px;background:rgba(255,255,255,.25);border-radius:3px;margin-top:10px;overflow:hidden}
+.wk-bar-fill{height:100%;border-radius:3px;background:rgba(255,255,255,.85)}
+.prog-bar{height:8px;background:var(--gray-b);border-radius:4px;overflow:hidden;min-width:100px}
+.prog-fill{height:100%;border-radius:4px}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cat-rom-card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+.cat-rom-header{padding:12px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--gray-b)}
+.cat-bar-row{padding:7px 16px;display:flex;align-items:center;gap:10px}
+.cat-bar-label{font-size:12px;font-weight:700;width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cat-bar-wrap{flex:1;height:8px;background:var(--gray-l);border-radius:4px;overflow:hidden}
+.cat-bar-fill{height:100%;border-radius:4px}
+.cat-bar-count{font-size:11px;font-weight:800;color:var(--text-s);min-width:24px;text-align:right}
+.overall-cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px}
+.overall-cat-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 16px;display:flex;align-items:center;gap:10px}
+.view{display:none}.view.active{display:flex;flex-direction:column;gap:18px}
+.loading-screen{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:100;gap:12px}
+.spinner{width:36px;height:36px;border:4px solid var(--gray-b);border-top-color:var(--red);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.card,.stat-card,.wk-card{animation:fadeUp .3s ease both}
+.empty-row td{text-align:center;padding:28px;color:var(--text-xs);font-family:var(--font-b);font-style:italic}
+@media(max-width:900px){.stats-row{grid-template-columns:repeat(2,1fr)}.weekly-grid{grid-template-columns:repeat(3,1fr)}.cat-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="toy-bg">
+<svg width="220" height="220" style="top:2%;left:1%;opacity:.07" viewBox="0 0 110 110"><circle cx="55" cy="68" r="32" fill="none" stroke="#1565C0" stroke-width="1.5"/><circle cx="55" cy="32" r="20" fill="none" stroke="#1565C0" stroke-width="1.5"/><circle cx="25" cy="46" r="13" fill="none" stroke="#1565C0" stroke-width="1.5"/><circle cx="85" cy="46" r="13" fill="none" stroke="#1565C0" stroke-width="1.5"/><circle cx="38" cy="80" r="9" fill="none" stroke="#1565C0" stroke-width="1.5"/><circle cx="72" cy="80" r="9" fill="none" stroke="#1565C0" stroke-width="1.5"/><text x="0" y="108" font-size="5" fill="#1565C0" font-family="monospace">SPEC: HAMLEYS-001</text></svg>
+<svg width="180" height="280" style="top:1%;right:2%;opacity:.07" viewBox="0 0 80 130"><ellipse cx="40" cy="50" rx="18" ry="40" fill="none" stroke="#E8282A" stroke-width="1.5"/><polygon points="40,5 22,38 58,38" fill="none" stroke="#E8282A" stroke-width="1.5"/><rect x="14" y="80" width="52" height="22" rx="5" fill="none" stroke="#E8282A" stroke-width="1.5"/><circle cx="40" cy="48" r="9" fill="none" stroke="#E8282A" stroke-width="1.2"/><text x="0" y="125" font-size="4" fill="#E8282A" font-family="monospace">ROCKETS-002</text></svg>
+<svg width="300" height="120" style="top:42%;left:0%;opacity:.065" viewBox="0 0 150 65"><rect x="5" y="14" width="140" height="35" rx="7" fill="none" stroke="#1D8348" stroke-width="1.5"/><rect x="22" y="6" width="32" height="14" rx="5" fill="none" stroke="#1D8348" stroke-width="1.2"/><circle cx="28" cy="52" r="9" fill="none" stroke="#1D8348" stroke-width="1.5"/><circle cx="28" cy="52" r="4" fill="none" stroke="#1D8348" stroke-width="1"/><circle cx="65" cy="52" r="9" fill="none" stroke="#1D8348" stroke-width="1.5"/><circle cx="102" cy="52" r="9" fill="none" stroke="#1D8348" stroke-width="1.5"/><circle cx="128" cy="52" r="9" fill="none" stroke="#1D8348" stroke-width="1.5"/><text x="2" y="8" font-size="4" fill="#1D8348" font-family="monospace">TRAIN-MK3</text></svg>
+<svg width="160" height="160" style="bottom:12%;left:2%;opacity:.08" viewBox="0 0 80 80"><polygon points="40,5 47,28 72,28 52,43 59,66 40,52 21,66 28,43 8,28 33,28" fill="none" stroke="#F5A623" stroke-width="1.5"/><text x="2" y="78" font-size="4" fill="#F5A623" font-family="monospace">STAR-GOLD</text></svg>
+<svg width="220" height="180" style="bottom:5%;right:2%;opacity:.07" viewBox="0 0 110 90"><rect x="5" y="28" width="100" height="58" rx="5" fill="none" stroke="#7B1FA2" stroke-width="1.5"/><rect x="18" y="12" width="25" height="20" rx="5" fill="none" stroke="#7B1FA2" stroke-width="1.5"/><rect x="65" y="12" width="25" height="20" rx="5" fill="none" stroke="#7B1FA2" stroke-width="1.5"/><text x="2" y="88" font-size="4" fill="#7B1FA2" font-family="monospace">BLOCK-CLASSIC</text></svg>
+<svg width="110" height="110" style="top:5%;left:38%;opacity:.06" viewBox="0 0 60 60"><rect x="5" y="5" width="50" height="50" rx="9" fill="none" stroke="#E8282A" stroke-width="1.5"/><circle cx="18" cy="18" r="4" fill="none" stroke="#E8282A" stroke-width="1.2"/><circle cx="42" cy="18" r="4" fill="none" stroke="#E8282A" stroke-width="1.2"/><circle cx="30" cy="30" r="4" fill="none" stroke="#E8282A" stroke-width="1.2"/><circle cx="18" cy="42" r="4" fill="none" stroke="#E8282A" stroke-width="1.2"/><circle cx="42" cy="42" r="4" fill="none" stroke="#E8282A" stroke-width="1.2"/><text x="2" y="58" font-size="4" fill="#E8282A" font-family="monospace">DICE-6</text></svg>
+</div>
+
+<div class="loading-screen" id="loading-screen">
+  <div style="font-size:48px">🧸</div>
+  <div class="spinner"></div>
+  <div style="font-size:18px;font-weight:800;color:var(--text)">Loading TPL Dashboard</div>
+  <div style="font-size:13px;color:var(--text-s);font-family:var(--font-b)" id="loading-msg">Connecting to Google Sheets...</div>
+</div>
+
+<div class="app" id="app" style="display:none">
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-mark"><span class="star">★</span> TPL</div>
+    <div class="logo-sub">Toys Pro League · Hamleys India</div>
+    <div class="last-upd" id="last-upd"></div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-label">Views</div>
+    <button class="nav-item active" onclick="switchView('daily',this)"><svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Daily Compliance</button>
+    <button class="nav-item" onclick="switchView('weekly',this)"><svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Weekly View</button>
+    <button class="nav-item" onclick="switchView('monthly',this)"><svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 8V5a2 2 0 00-2-2H5a2 2 0 00-2 2v3m18 0H3m18 0v11a2 2 0 01-2 2H5a2 2 0 01-2-2V8"/></svg>Monthly View</button>
+    <button class="nav-item" onclick="switchView('stores',this)"><svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>Store Drill-Down</button>
+    <button class="nav-item" onclick="switchView('category',this)"><svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>Category Insights</button>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="week-pill">
+      <div class="wl">Data range</div>
+      <div class="wv" id="week-label-sidebar">—</div>
+    </div>
+  </div>
+</aside>
+
+<main class="main">
+  <!-- LIVE SYNC BAR -->
+  <div class="sync-bar">
+    <div class="sync-dot live" id="sync-dot"></div>
+    <span id="sync-status">Live · data from Google Sheets</span>
+    <span id="sync-time" style="color:var(--text-xs)"></span>
+    <button class="sync-btn" onclick="refreshData()">↺ Refresh now</button>
+  </div>
+
+  <div class="topbar">
+    <div>
+      <div class="page-title" id="page-title">Daily Compliance</div>
+      <div class="page-sub" id="page-sub">T-O-Y-S Huddle Tracker</div>
+    </div>
+    <div class="topbar-right">
+      <div class="legend-row">
+        <div class="legend-item"><div class="ldot g"></div>≥75%</div>
+        <div class="legend-item"><div class="ldot a"></div>50–74%</div>
+        <div class="legend-item"><div class="ldot r"></div>&lt;50%</div>
+        <div class="legend-item"><div class="ldot k"></div>Holiday</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <!-- DAILY -->
+    <div class="view active" id="view-daily">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <span class="filter-lbl">Select date</span>
+        <select class="filter-sel" id="daily-date-sel" onchange="selectDateFromDropdown(this.value)" style="font-size:13px;font-weight:800;min-width:220px"></select>
+        <span id="daily-activity-badge" style="font-size:12px;font-family:var(--font-b);color:var(--text-s)"></span>
+      </div>
+      <div class="stats-row" id="daily-stats"></div>
+      <div class="card">
+        <div class="card-header"><div>
+          <div class="card-title" id="daily-card-title">ROM Compliance</div>
+          <div class="card-sub" id="daily-card-sub">One entry per store per day</div>
+        </div></div>
+        <table class="tpl-table"><thead><tr><th>ROM</th><th style="text-align:center">Total Stores</th><th style="text-align:center">Completed</th><th style="text-align:center">Missed</th><th style="text-align:center">Compliance</th></tr></thead><tbody id="daily-rom-tbody"></tbody></table>
+      </div>
+      <div class="card">
+        <div class="card-header"><div>
+          <div class="card-title">All Dates Overview</div>
+          <div class="card-sub">Compliance % per ROM per date</div>
+        </div></div>
+        <div style="overflow-x:auto"><table class="tpl-table"><thead><tr id="overview-head"></tr></thead><tbody id="overview-tbody"></tbody></table></div>
+      </div>
+    </div>
+
+    <!-- WEEKLY -->
+    <div class="view" id="view-weekly">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+        <span class="filter-lbl">Select week</span>
+        <select class="filter-sel" id="week-sel" onchange="selectWeek(this.value)" style="font-size:13px;font-weight:800;min-width:240px"></select>
+        <span id="week-sel-sub" style="font-size:12px;font-family:var(--font-b);color:var(--text-s)"></span>
+      </div>
+      <div class="weekly-grid" id="weekly-cards"></div>
+      <div class="card">
+        <div class="card-header"><div>
+          <div class="card-title" id="weekly-title">Weekly Breakdown</div>
+          <div class="card-sub">Entries received ÷ (stores × active TPL days)</div>
+        </div></div>
+        <div style="overflow-x:auto"><table class="tpl-table"><thead><tr id="weekly-head"></tr></thead><tbody id="weekly-tbody"></tbody></table></div>
+      </div>
+    </div>
+
+    <!-- MONTHLY -->
+    <div class="view" id="view-monthly">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title" id="monthly-title">Monthly Compliance</div>
+            <div class="card-sub" id="monthly-sub"></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px">
+            <span class="filter-lbl">Month</span>
+            <select class="filter-sel" id="month-sel" onchange="renderMonthly()" style="font-size:13px;font-weight:800;min-width:160px"></select>
+          </div>
+        </div>
+        <table class="tpl-table"><thead><tr><th>ROM</th><th style="text-align:center">Stores</th><th style="text-align:center">Received</th><th style="text-align:center">Possible</th><th style="text-align:center">Monthly %</th><th>Progress</th></tr></thead><tbody id="monthly-tbody"></tbody></table>
+      </div>
+    </div>
+
+    <!-- STORES -->
+    <div class="view" id="view-stores">
+      <div class="card">
+        <div class="card-header"><div><div class="card-title">Store-wise Compliance</div><div class="card-sub">Filter by ROM · SD · date · status</div></div></div>
+        <div class="filter-row">
+          <span class="filter-lbl">ROM</span>
+          <select class="filter-sel" id="f-rom" onchange="onRomFilterChange()"><option value="all">All ROMs</option></select>
+          <span class="filter-lbl">SD</span>
+          <select class="filter-sel" id="f-sd" onchange="renderStores()"><option value="all">All SDs</option></select>
+          <span class="filter-lbl">View</span>
+          <div style="display:flex;background:var(--gray-l);border-radius:8px;padding:3px;gap:2px">
+            <button id="sv-week-btn" onclick="setStoreView('weekly')" style="padding:5px 12px;border-radius:6px;border:none;font-family:var(--font);font-size:12px;font-weight:800;cursor:pointer;background:var(--red);color:#fff">Full Week</button>
+            <button id="sv-date-btn" onclick="setStoreView('date')" style="padding:5px 12px;border-radius:6px;border:none;font-family:var(--font);font-size:12px;font-weight:800;cursor:pointer;background:none;color:var(--text-s)">Single Day</button>
+          </div>
+          <input type="date" id="f-date" min="2026-05-01" max="2026-12-31" onchange="renderStores()" style="display:none;padding:6px 10px;border:1.5px solid var(--gray-b);border-radius:8px;font-family:var(--font);font-size:13px;font-weight:700;color:var(--text);outline:none">
+          <span class="filter-lbl">Status</span>
+          <select class="filter-sel" id="f-status" onchange="renderStores()"><option value="all">All</option><option value="100">100% complete</option><option value="partial">Partial</option><option value="0">Never submitted</option></select>
+          <div class="filter-spacer"></div>
+          <span id="store-count-lbl" style="font-size:12px;font-weight:800;color:var(--text-s);font-family:var(--font-b)"></span>
+        </div>
+        <div style="overflow-x:auto"><table class="tpl-table"><thead><tr id="stores-thead"></tr></thead><tbody id="stores-tbody"></tbody></table></div>
+      </div>
+    </div>
+
+    <!-- CATEGORY -->
+    <div class="view" id="view-category">
+      <div class="card" style="padding:16px 20px;background:linear-gradient(135deg,#1A1A2E,#2D2D4E);color:#fff">
+        <div style="font-size:13px;font-weight:800;opacity:.7;letter-spacing:.5px;text-transform:uppercase;font-family:var(--font-b)">📊 Category Insights</div>
+        <div style="font-size:15px;font-weight:900;margin-top:4px">Data from 25 May 2026 onwards · Structured dropdown responses only</div>
+        <div style="font-size:11px;opacity:.6;font-family:var(--font-b);margin-top:2px">Pre-25 May entries excluded — category data was unstructured before this date</div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:800;color:var(--text-s);letter-spacing:.5px;text-transform:uppercase;font-family:var(--font-b);margin-bottom:10px">Overall — All ROMs</div>
+        <div class="overall-cat-grid" id="overall-cat-grid"></div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:800;color:var(--text-s);letter-spacing:.5px;text-transform:uppercase;font-family:var(--font-b);margin-bottom:10px">ROM-wise Breakdown</div>
+        <div class="cat-grid" id="cat-rom-grid"></div>
+      </div>
+    </div>
+  </div>
+</main>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+// CONSTANTS
+// ══════════════════════════════════════════
+const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/1Tm1xVYIHKDaPz5r-daJmhmgu8--QUoSyJqi9Yy1mefA/export?format=csv&gid=79420501';
+const CONFIG_URL = 'https://raw.githubusercontent.com/hamleystraining-dashboard/tpl-dashboard/main/data.json';
+const REFRESH_INTERVAL_MS = 30 * 60 * 1000; // 30 minutes
+
+const ROM_COLORS={"Shirish Mastud":"#E8282A","Lalit Mohan":"#F5A623","Chetan Chaudhari":"#1D8348","Ashlin Moses":"#1565C0","Divya Lakshmi":"#7B1FA2","Ajay Gill":"#E67E22"};
+const WK_BG={"Shirish Mastud":"linear-gradient(135deg,#E8282A,#B51E20)","Lalit Mohan":"linear-gradient(135deg,#F5A623,#C27D0A)","Chetan Chaudhari":"linear-gradient(135deg,#1D8348,#145A32)","Ashlin Moses":"linear-gradient(135deg,#1565C0,#0D47A1)","Divya Lakshmi":"linear-gradient(135deg,#7B1FA2,#4A0072)","Ajay Gill":"linear-gradient(135deg,#E67E22,#A84300)"};
+const ACTIVITY={Monday:"T — Toy Pitch Battle",Tuesday:"O — Observe & Find",Wednesday:"Y — You Handle Objections",Thursday:"S — Selling Add-Ons"};
+const ACT_CLASS={Monday:"act-t",Tuesday:"act-o",Wednesday:"act-y",Thursday:"act-s"};
+const TPL_DAYS=['Monday','Tuesday','Wednesday','Thursday'];
+const DAY_NAMES_WK=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const ROM_MAP={'Lalit':'Lalit Mohan','Shirish':'Shirish Mastud','Ashlin':'Ashlin Moses','Chetan':'Chetan Chaudhari','Ajay':'Ajay Gill','Divya':'Divya Lakshmi'};
+const CAT_NORM={'board game':'Board Games','board games':'Board Games','boardgame':'Board Games','boys':'Boys','girls':'Girls','science':'Science','sports':'Sports','sport':'Sports','kidult':'Kidult','roleplay sets':'Roleplay sets','roleplay':'Roleplay sets','lifestyle':'Lifestyle','construction':'Construction','books and accessories':'Books and Accessories','ride-ons':'Ride-ons','ride ons':'Ride-ons','luvley':'Luvley','preschool':'Preschool','music':'Music','games and puzzles':'Games and Puzzles','vehicles':'Vehicles','impulse':'Impulse'};
+const CAT_ICONS={"Board Games":"🎲","Boys":"🚀","Sports":"⚽","Science":"🔬","Roleplay sets":"🎭","Kidult":"🎮","Ride-ons":"🚲","Impulse":"⚡","Construction":"🧱","Lifestyle":"🌟","Books and Accessories":"📚","Luvley":"💜","Girls":"👑","Music":"🎵","Preschool":"🧸","Vehicles":"🚗","Games and Puzzles":"🎯"};
+
+// ══════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════
+let CFG = null;        // store/SD/ROM config from data.json (GitHub)
+let D = null;          // processed dashboard data (built from Google Sheets)
+let currentDateIdx = 0;
+let storeViewMode = 'weekly';
+let weekGroups = [];
+let currentWeekIdx = 0;
+let refreshTimer = null;
+
+// ══════════════════════════════════════════
+// DATA LOADING
+// ══════════════════════════════════════════
+async function loadAll(isRefresh=false){
+  setSyncStatus('loading','Fetching latest data...');
+  try {
+    // Load config (store/SD mapping) from GitHub
+    const cfgRes = await fetch(CONFIG_URL+'?v='+Date.now());
+    if(!cfgRes.ok) throw new Error('Config fetch failed: '+cfgRes.status);
+    CFG = await cfgRes.json();
+
+    // Load live compliance data from Google Sheets
+    document.getElementById('loading-msg').textContent = 'Processing responses...';
+    const csvRes = await fetch(SHEET_CSV_URL+'&v='+Date.now());
+    if(!csvRes.ok) throw new Error('Google Sheets fetch failed: '+csvRes.status);
+    const csvText = await csvRes.text();
+
+    // Parse and process
+    D = processCSV(csvText, CFG);
+
+    if(!isRefresh){
+      document.getElementById('loading-screen').style.display='none';
+      document.getElementById('app').style.display='flex';
+      initUI();
+    } else {
+      refreshUI();
+    }
+
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+    setSyncStatus('live',`Live · last synced at ${timeStr}`);
+    document.getElementById('last-upd').textContent='Live from Google Sheets';
+
+    // Schedule next auto-refresh
+    if(refreshTimer) clearTimeout(refreshTimer);
+    refreshTimer = setTimeout(()=>loadAll(true), REFRESH_INTERVAL_MS);
+
+  } catch(e) {
+    setSyncStatus('error','Could not load data — '+e.message);
+    if(!isRefresh){
+      document.getElementById('loading-screen').innerHTML=`
+        <div style="font-size:48px">⚠️</div>
+        <div style="font-size:18px;font-weight:800;color:#E8282A">Could not load data</div>
+        <div style="font-size:13px;color:#5A5A72;font-family:sans-serif;max-width:340px;text-align:center;line-height:1.6">${e.message}</div>
+        <button onclick="loadAll()" style="margin-top:12px;padding:10px 20px;background:#E8282A;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:800;cursor:pointer">↺ Retry</button>`;
+    }
+  }
+}
+
+async function refreshData(){
+  setSyncStatus('loading','Refreshing...');
+  await loadAll(true);
+}
+
+function setSyncStatus(state, msg){
+  const dot=document.getElementById('sync-dot');
+  const status=document.getElementById('sync-status');
+  if(!dot||!status)return;
+  dot.className='sync-dot '+({live:'live',loading:'loading',error:'error'}[state]||'live');
+  status.textContent=msg;
+}
+
+// ══════════════════════════════════════════
+// CSV PROCESSING
+// ══════════════════════════════════════════
+function processCSV(csvText, cfg){
+  // Parse CSV
+  const lines = csvText.split('\n');
+  const rows = lines.map(line => parseCSVLine(line));
+  if(rows.length < 2) throw new Error('Empty spreadsheet');
+
+  // Col indices: 0=Timestamp, 2=StoreName, 3=StoreCode, 7=DATE, 8=DAY, 9=ROM, 12=Category
+  // Build ROM→storeCodes map first so we can validate during parsing
+  const romForStore = {};
+  Object.entries(cfg.storesByRom||{}).forEach(([rom,stores])=>{
+    stores.forEach(s=>{ romForStore[s.code] = rom; });
+  });
+
+  const entries = [];
+  for(let i=1;i<rows.length;i++){
+    const row = rows[i];
+    if(row.length < 10) continue;
+    const storeCode = (row[3]||'').trim();
+    const dateStr   = (row[7]||'').trim();
+    const enteredDay = (row[8]||'').trim();
+    const romRaw    = (row[9]||'').trim();
+    const categoryRaw = (row[12]||'').trim();
+    const tsStr     = (row[0]||'').trim();
+    if(!storeCode||!dateStr||!enteredDay) continue;
+
+    const rom = ROM_MAP[romRaw]||romRaw;
+    if(!romForStore[storeCode]) continue; // closed/unknown store — skip silently
+
+    // Parse timestamp — always reliable (set by the form platform)
+    const tsDate = parseDate(tsStr);
+    if(!tsDate) continue;
+
+    // Parse the entered date
+    let dateObj = parseDate(dateStr);
+    if(!dateObj) continue;
+
+    // ── STEP 2 & 3: Try all date interpretations, pick best match ──
+    // Candidates: M/D, D/M swap, and timestamp-month-anchor with each digit
+    const parts = dateStr.split('/');
+    let a = parts[0] ? parseInt(parts[0]) : 0;
+    let b = parts[1] ? parseInt(parts[1]) : 0;
+    const fixedYear = dateObj.getFullYear() < 2024 || dateObj.getFullYear() > 2030
+      ? tsDate.getFullYear() : dateObj.getFullYear();
+
+    const candidates = [];
+    // M/D and D/M interpretations
+    for(const [m,d] of [[a,b],[b,a]]){
+      if(m>=1&&m<=12&&d>=1&&d<=31){
+        try{
+          const dt = new Date(fixedYear,m-1,d);
+          if(!isNaN(dt.getTime())&&dt.getMonth()===m-1){
+            const diff = Math.abs(dt-tsDate)/(1000*60*60*24);
+            const dayMatch = DAY_NAMES_WK[dt.getDay()]===enteredDay;
+            candidates.push({diff,dayMatch,dt});
+          }
+        }catch(e){}
+      }
+    }
+    // Timestamp-month-anchor: use ts month/year, try each digit as day
+    for(const dayNum of [a,b]){
+      if(dayNum>=1&&dayNum<=31){
+        try{
+          const dt = new Date(tsDate.getFullYear(),tsDate.getMonth(),dayNum);
+          if(!isNaN(dt.getTime())&&dt.getDate()===dayNum){
+            const diff = Math.abs(dt-tsDate)/(1000*60*60*24);
+            const dayMatch = DAY_NAMES_WK[dt.getDay()]===enteredDay;
+            candidates.push({diff,dayMatch,dt});
+          }
+        }catch(e){}
+      }
+    }
+
+    if(!candidates.length) continue;
+
+    // Sort: day-match first, then closest to timestamp
+    candidates.sort((x,y)=> x.dayMatch===y.dayMatch ? x.diff-y.diff : (x.dayMatch?-1:1));
+    let finalDate = candidates[0].dt;
+    let finalDay  = DAY_NAMES_WK[finalDate.getDay()];
+
+    // ── STEP 4: Handle non-TPL day ──
+    // If finalDate is Fri/Sat/Sun, snap to next Monday
+    if(!TPL_DAYS.includes(finalDay)){
+      const dow = finalDate.getDay();
+      const daysAhead = dow===0?1:(8-dow)%7||7;
+      const snapped = new Date(finalDate);
+      snapped.setDate(finalDate.getDate()+daysAhead);
+      finalDate = snapped;
+      finalDay = 'Monday';
+    }
+
+    // ── STEP 5: If date/day still mismatch (after all corrections), trust the date ──
+    const verifiedDay = DAY_NAMES_WK[finalDate.getDay()];
+    if(verifiedDay !== finalDay) finalDay = verifiedDay;
+
+    if(!TPL_DAYS.includes(finalDay)) continue;
+
+    const category = normaliseCategory(categoryRaw);
+    entries.push({
+      storeCode, rom, category,
+      dateStr: toDateStr(finalDate),
+      finalDay,
+      ts: tsStr
+    });
+  }
+
+  // Sort by timestamp ascending so earliest entry wins on dedup
+  entries.sort((a,b)=>a.ts.localeCompare(b.ts));
+
+  // ── STEP 6: Dedup with 4-entries-per-week cap ──
+  // Track entries per store per week (Mon-Thu = max 4)
+  // Week key = Monday's date of that week
+  function getWeekMonday(dateStr){
+    const d = new Date(dateStr+'T00:00:00');
+    const dow = d.getDay()===0?6:d.getDay()-1; // 0=Mon
+    const mon = new Date(d); mon.setDate(d.getDate()-dow);
+    return toDateStr(mon);
+  }
+
+  const seenDateKey = new Set();        // store+date dedup
+  const weekEntries = {};               // store+weekMonday → [dateStrs submitted]
+  const deduped = [];
+
+  for(const r of entries){
+    // Skip if same store already submitted on this exact date
+    const dateKey = `${r.storeCode}|${r.dateStr}`;
+    if(seenDateKey.has(dateKey)) continue;
+
+    // Check week cap — max 4 entries per store per week
+    const weekMon = getWeekMonday(r.dateStr);
+    const weekKey = `${r.storeCode}|${weekMon}`;
+    if(!weekEntries[weekKey]) weekEntries[weekKey] = [];
+
+    if(weekEntries[weekKey].length >= 4){
+      // Already has 4 entries this week — discard
+      continue;
+    }
+
+    // Accept entry
+    seenDateKey.add(dateKey);
+    weekEntries[weekKey].push(r.dateStr);
+
+    // Reassign to correct ROM if submitted under wrong ROM
+    const correctRom = romForStore[r.storeCode];
+    if(correctRom && correctRom !== r.rom) r.rom = correctRom;
+
+    deduped.push(r);
+  }
+
+  // Build compliance per ROM per date
+  const romStoreCodes = {};
+  const storesByRom = cfg.storesByRom||{};
+  const sdsByRom = cfg.sdsByRom||{};
+  Object.entries(storesByRom).forEach(([rom,stores])=>{romStoreCodes[rom]=stores.map(s=>s.code);});
+
+  const complianceByDate = {};
+  const allDateDayMap = {};
+  const roms = Object.keys(cfg.romTotals||{});
+
+  // Collect all unique dates
+  deduped.forEach(r=>{allDateDayMap[r.dateStr]=r.finalDay;});
+
+  roms.forEach(rom=>{
+    complianceByDate[rom]={};
+    const allStores = romStoreCodes[rom]||[];
+    Object.entries(allDateDayMap).forEach(([dateStr,day])=>{
+      const completed = deduped.filter(r=>r.rom===rom&&r.dateStr===dateStr).map(r=>r.storeCode);
+      const missed = allStores.filter(c=>!completed.includes(c));
+      complianceByDate[rom][dateStr]={day,completed,missed,count:completed.length};
+    });
+  });
+
+  // Timeline
+  const timeline = Object.entries(allDateDayMap).sort((a,b)=>a[0].localeCompare(b[0])).map(([ds,day])=>{
+    const d=new Date(ds+'T00:00:00');
+    return{date:ds,day,dateLabel:d.getDate()+' '+d.toLocaleString('en',{month:'short'})};
+  });
+
+  // Categories from 25 May+
+  const catDeduped = deduped.filter(r=>r.dateStr>='2026-05-25'&&r.category);
+  const categoryByRom={}, categoryOverall={};
+  catDeduped.forEach(r=>{
+    if(!categoryByRom[r.rom])categoryByRom[r.rom]={};
+    categoryByRom[r.rom][r.category]=(categoryByRom[r.rom][r.category]||0)+1;
+    categoryOverall[r.category]=(categoryOverall[r.category]||0)+1;
+  });
+
+  const weekLabel = timeline.length ? timeline[0].dateLabel+' – '+timeline[timeline.length-1].dateLabel+' 2026' : '';
+
+  return {
+    romTotals: cfg.romTotals||{},
+    storesByRom, sdsByRom,
+    complianceByDate, categoryByRom, categoryOverall,
+    timeline, weekLabel,
+    totalEntries: deduped.length
+  };
+}
+
+function parseCSVLine(line){
+  const result=[];let cur='';let inQ=false;
+  for(let i=0;i<line.length;i++){
+    const ch=line[i];
+    if(ch==='"'){if(inQ&&line[i+1]==='"'){cur+='"';i++;}else{inQ=!inQ;}}
+    else if(ch===','&&!inQ){result.push(cur);cur='';}
+    else{cur+=ch;}
+  }
+  result.push(cur);
+  return result;
+}
+
+function parseDate(str){
+  if(!str||str.trim()==='')return null;
+  const s=str.trim();
+  // Google Sheets CSV exports as M/D/YYYY — always parse this way first
+  const mdy=/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/.exec(s);
+  if(mdy){
+    let y=parseInt(mdy[3]);if(y<100)y+=2000;
+    const d=new Date(y,parseInt(mdy[1])-1,parseInt(mdy[2])); // month-1, day
+    if(!isNaN(d.getTime()))return d;
+  }
+  // YYYY-MM-DD (ISO)
+  const ymd=/^(\d{4})-(\d{2})-(\d{2})/.exec(s);
+  if(ymd){
+    const d=new Date(parseInt(ymd[1]),parseInt(ymd[2])-1,parseInt(ymd[3]));
+    if(!isNaN(d.getTime()))return d;
+  }
+  return null;
+}
+
+function toDateStr(d){
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+
+function normaliseCategory(raw){
+  if(!raw)return'';
+  const clean=raw.trim().toLowerCase();
+  return CAT_NORM[clean]||raw.trim();
+}
+
+// ══════════════════════════════════════════
+// UI INIT
+// ══════════════════════════════════════════
+function initUI(){
+  document.getElementById('week-label-sidebar').textContent=D.weekLabel||'—';
+  document.getElementById('page-sub').textContent='T-O-Y-S Huddle Tracker · '+D.weekLabel;
+
+  // Date dropdown
+  const dateSel=document.getElementById('daily-date-sel');
+  dateSel.innerHTML=D.timeline.map((t,i)=>
+    `<option value="${i}">${t.day} · ${t.dateLabel} · ${ACTIVITY[t.day]||t.day}</option>`
+  ).join('');
+
+  // Overview header
+  document.getElementById('overview-head').innerHTML=
+    `<th>ROM</th><th>Stores</th>`+
+    D.timeline.map(t=>`<th style="text-align:center">${t.day.slice(0,3)}<br><span style="font-size:9px;color:var(--text-xs)">${t.dateLabel}</span><br><span class="act-pill ${ACT_CLASS[t.day]}">${t.day[0]}</span></th>`).join('')+
+    `<th style="text-align:center">Overall %</th>`;
+
+
+  // ROM filter
+  const romSel=document.getElementById('f-rom');
+  romSel.innerHTML='<option value="all">All ROMs</option>';
+  getRoms().forEach(rom=>{const o=document.createElement('option');o.value=rom;o.textContent=rom;romSel.appendChild(o);});
+
+  // Default date for store view
+  if(D.timeline.length) document.getElementById('f-date').value=D.timeline[0].date;
+
+  renderAll();
+}
+
+function refreshUI(){
+  // Update date dropdown
+  const dateSel=document.getElementById('daily-date-sel');
+  const prevIdx=currentDateIdx;
+  dateSel.innerHTML=D.timeline.map((t,i)=>
+    `<option value="${i}">${t.day} · ${t.dateLabel} · ${ACTIVITY[t.day]||t.day}</option>`
+  ).join('');
+  currentDateIdx=Math.min(prevIdx, D.timeline.length-1);
+  dateSel.value=currentDateIdx;
+
+  // Update overview header
+  document.getElementById('overview-head').innerHTML=
+    `<th>ROM</th><th>Stores</th>`+
+    D.timeline.map(t=>`<th style="text-align:center">${t.day.slice(0,3)}<br><span style="font-size:9px;color:var(--text-xs)">${t.dateLabel}</span><br><span class="act-pill ${ACT_CLASS[t.day]}">${t.day[0]}</span></th>`).join('')+
+    `<th style="text-align:center">Overall %</th>`;
+
+  document.getElementById('week-label-sidebar').textContent=D.weekLabel||'—';
+  buildWeekGroups();
+  buildMonthSelector();
+  renderAll();
+}
+
+function renderAll(){
+  renderDaily();
+  renderWeekly();
+  renderMonthly();
+  renderStores();
+  renderCategory();
+}
+
+// ══════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════
+function getRoms(){return Object.keys(D.romTotals);}
+function pctClass(p){return p>=75?'g':p>=50?'a':'r';}
+function pctPill(p,skip){if(skip)return'<span class="pct n">🎉</span>';return`<span class="pct ${pctClass(p)}">${p}%</span>`;}
+function isExcluded(date){return(CFG.excludedDays||[]).some(e=>e.date===date);}
+function getActiveDates(){return D.timeline.filter(t=>!isExcluded(t.date));}
+function getDateCompliance(rom,date){return(D.complianceByDate[rom]&&D.complianceByDate[rom][date])||{completed:[],missed:[],count:0,day:''};}
+
+function buildWeekGroups(){
+  const byWeek={};
+  D.timeline.forEach(t=>{
+    const d=new Date(t.date+'T00:00:00');
+    const dow=d.getDay()===0?6:d.getDay()-1;
+    const mon=new Date(d);mon.setDate(d.getDate()-dow);
+    const key=toDateStr(mon);
+    if(!byWeek[key])byWeek[key]=[];
+    byWeek[key].push(t);
+  });
+  weekGroups=Object.entries(byWeek).sort((a,b)=>a[0].localeCompare(b[0])).map(([ws,dates])=>{
+    const first=dates[0],last=dates[dates.length-1];
+    const label=first.dateLabel+(first.dateLabel!==last.dateLabel?' – '+last.dateLabel:'')+' ('+dates.length+' day'+(dates.length!==1?'s':'')+')';
+    return{label,dates,weekStart:ws};
+  });
+  const sel=document.getElementById('week-sel');
+  sel.innerHTML=weekGroups.map((w,i)=>`<option value="${i}">Week of ${w.label}</option>`).join('');
+  currentWeekIdx=weekGroups.length-1;
+  sel.value=currentWeekIdx;
+}
+
+// ══════════════════════════════════════════
+// VIEW SWITCHING
+// ══════════════════════════════════════════
+function switchView(v,btn){
+  document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(el=>el.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  const titles={daily:'Daily Compliance',weekly:'Weekly Compliance',monthly:'Monthly Compliance',stores:'Store Drill-Down',category:'Category Insights'};
+  document.getElementById('page-title').textContent=titles[v];
+}
+
+// ══════════════════════════════════════════
+// DAILY
+// ══════════════════════════════════════════
+function selectDateFromDropdown(idx){currentDateIdx=parseInt(idx);renderDaily();}
+
+function renderDaily(){
+  if(!D)return;
+  const t=D.timeline[currentDateIdx];if(!t)return;
+  const date=t.date,day=t.day,skip=isExcluded(date),act=ACTIVITY[day]||day;
+  document.getElementById('daily-activity-badge').innerHTML=`<span class="act-pill ${ACT_CLASS[day]}">${day[0]}</span>&nbsp;Activity: <strong>${act}</strong>`;
+  document.getElementById('daily-card-title').textContent=`ROM Compliance — ${day} ${t.dateLabel}`;
+  document.getElementById('daily-card-sub').textContent=`Activity: ${act} · One entry per store per day`;
+  const roms=getRoms();
+  let ts=0,tc=0;
+  roms.forEach(rom=>{ts+=D.romTotals[rom]||0;tc+=getDateCompliance(rom,date).count;});
+  const op=ts?Math.round(tc/ts*100):0;
+  const ot=roms.filter(rom=>{const t2=D.romTotals[rom]||0;const c=getDateCompliance(rom,date);return t2&&Math.round(c.count/t2*100)>=75;}).length;
+  document.getElementById('daily-stats').innerHTML=[
+    {cls:'sc-red',deco:'📊',lbl:'Overall Compliance',val:skip?'🎉':`${op}%`,sub:`${day} · ${act.split('—')[0].trim()}`},
+    {cls:'sc-gold',deco:'🏬',lbl:'Stores Completed',val:skip?'—':tc,sub:`of ${ts} stores`},
+    {cls:'sc-blue',deco:'⚠️',lbl:'Stores Missed',val:skip?'—':(ts-tc),sub:skip?'Day excluded':'need to submit'},
+    {cls:'sc-green',deco:'🎯',lbl:'ROMs on Track ≥75%',val:skip?'—':`${ot}/${roms.length}`,sub:`of ${roms.length} ROMs`}
+  ].map(s=>`<div class="stat-card ${s.cls}"><div class="sc-deco">${s.deco}</div><div class="sc-label">${s.lbl}</div><div class="sc-val">${s.val}</div><div class="sc-sub">${s.sub}</div></div>`).join('');
+  document.getElementById('daily-rom-tbody').innerHTML=roms.map(rom=>{
+    const total=D.romTotals[rom]||0,c=getDateCompliance(rom,date),pct=total?Math.round(c.count/total*100):0;
+    return`<tr><td><div class="rom-chip"><div class="rom-dot" style="background:${ROM_COLORS[rom]||'#999'}"></div>${rom}</div></td><td style="text-align:center;font-weight:800">${total}</td><td style="text-align:center;font-weight:800;color:var(--green)">${skip?'—':c.count}</td><td style="text-align:center;font-weight:800;color:var(--red-d)">${skip?'—':(total-c.count)}</td><td style="text-align:center">${pctPill(pct,skip)}</td></tr>`;
+  }).join('');
+  document.getElementById('overview-tbody').innerHTML=roms.map(rom=>{
+    const total=D.romTotals[rom]||0;let or=0,op=0;
+    const cells=D.timeline.map(t=>{const s=isExcluded(t.date);const c=getDateCompliance(rom,t.date);const p=total?Math.round(c.count/total*100):0;if(!s){or+=c.count;op+=total;}return`<td style="text-align:center">${pctPill(p,s)}</td>`;}).join('');
+    return`<tr><td><div class="rom-chip"><div class="rom-dot" style="background:${ROM_COLORS[rom]||'#999'}"></div>${rom}</div></td><td style="text-align:center;font-weight:800">${total}</td>${cells}<td style="text-align:center">${pctPill(op?Math.round(or/op*100):0)}</td></tr>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+// WEEKLY
+// ══════════════════════════════════════════
+function selectWeek(idx){currentWeekIdx=parseInt(idx);renderWeekly();}
+
+function renderWeekly(){
+  if(!D||!weekGroups.length)return;
+  const week=weekGroups[currentWeekIdx],wd=week.dates,roms=getRoms();
+  document.getElementById('weekly-title').textContent=`Weekly Compliance — Week of ${week.label}`;
+  document.getElementById('week-sel-sub').textContent=`${wd.length} TPL day${wd.length!==1?'s':''}: ${wd.map(t=>t.day.slice(0,3)+' '+t.dateLabel).join(' · ')}`;
+  document.getElementById('weekly-cards').innerHTML=roms.map(rom=>{
+    const total=D.romTotals[rom]||0;const active=wd.filter(t=>!isExcluded(t.date));
+    let rec=0;active.forEach(t=>{rec+=getDateCompliance(rom,t.date).count;});
+    const poss=total*active.length,pct=poss?Math.round(rec/poss*100):0;
+    return`<div class="wk-card" style="background:${WK_BG[rom]||'#999'}"><div class="wkc-name">${rom.split(' ')[0]}</div><div class="wkc-pct">${pct}%</div><div class="wkc-det">${rec}/${poss} entries</div><div class="wk-bar"><div class="wk-bar-fill" style="width:${pct}%"></div></div></div>`;
+  }).join('');
+  document.getElementById('weekly-head').innerHTML=`<th>ROM</th><th style="text-align:center">Stores</th>`+wd.map(t=>`<th style="text-align:center">${t.day.slice(0,3)}<br><span style="font-size:9px;color:var(--text-xs)">${t.dateLabel}</span><br><span class="act-pill ${ACT_CLASS[t.day]}">${t.day[0]}</span></th>`).join('')+`<th style="text-align:center">Received</th><th style="text-align:center">Possible</th><th style="text-align:center">Weekly %</th>`;
+  document.getElementById('weekly-tbody').innerHTML=roms.map(rom=>{
+    const total=D.romTotals[rom]||0;let wr=0,wp=0;
+    const cells=wd.map(t=>{const s=isExcluded(t.date);const c=getDateCompliance(rom,t.date);const p=total?Math.round(c.count/total*100):0;if(!s){wr+=c.count;wp+=total;}return`<td style="text-align:center">${pctPill(p,s)}</td>`;}).join('');
+    const wPct=wp?Math.round(wr/wp*100):0;
+    return`<tr><td><div class="rom-chip"><div class="rom-dot" style="background:${ROM_COLORS[rom]||'#999'}"></div>${rom}</div></td><td style="text-align:center;font-weight:800">${total}</td>${cells}<td style="text-align:center;font-weight:800">${wr}</td><td style="text-align:center;font-weight:800">${wp}</td><td style="text-align:center">${pctPill(wPct)}</td></tr>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+// MONTHLY
+// ══════════════════════════════════════════
+function buildMonthSelector(){
+  // Get unique YYYY-MM values from timeline
+  const months = [...new Set(D.timeline.map(t=>t.date.slice(0,7)))].sort();
+  const sel = document.getElementById('month-sel');
+  const MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  sel.innerHTML = months.map(m => {
+    const [y, mo] = m.split('-');
+    const label = MONTH_NAMES[parseInt(mo)-1] + ' ' + y;
+    return `<option value="${m}">${label}</option>`;
+  }).join('');
+  // Default to most recent month
+  sel.value = months[months.length-1];
+}
+
+function renderMonthly(){
+  if(!D) return;
+  const sel = document.getElementById('month-sel');
+  if(!sel) return;
+  const selectedMonth = sel.value; // e.g. "2026-05" or "2026-06"
+  const [y, mo] = selectedMonth.split('-');
+  const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const monthName = MONTH_NAMES[parseInt(mo)-1] + ' ' + y;
+
+  // Filter active dates for selected month only
+  const active = getActiveDates().filter(t => t.date.startsWith(selectedMonth));
+
+  document.getElementById('monthly-title').textContent = `Monthly Compliance — ${monthName}`;
+  document.getElementById('monthly-sub').textContent = active.length
+    ? `${active.length} active TPL day${active.length!==1?'s':''} in ${monthName} (${active.map(t=>t.dateLabel).join(', ')})`
+    : `No TPL data recorded for ${monthName} yet`;
+
+  document.getElementById('monthly-tbody').innerHTML = getRoms().map(rom => {
+    const total = D.romTotals[rom]||0;
+    let rec = 0;
+    active.forEach(t => { rec += getDateCompliance(rom, t.date).count; });
+    const poss = total * active.length;
+    const pct = poss ? Math.round(rec/poss*100) : 0;
+    const bc = pct>=75?'var(--green)':pct>=50?'var(--amber)':'var(--red)';
+    return `<tr>
+      <td><div class="rom-chip"><div class="rom-dot" style="background:${ROM_COLORS[rom]||'#999'}"></div>${rom}</div></td>
+      <td style="text-align:center;font-weight:800">${total}</td>
+      <td style="text-align:center;font-weight:800">${rec}</td>
+      <td style="text-align:center;font-weight:800">${poss}</td>
+      <td style="text-align:center">${active.length ? pctPill(pct) : '<span style="color:var(--text-xs);font-size:12px;font-family:var(--font-b)">No data</span>'}</td>
+      <td><div class="prog-bar"><div class="prog-fill" style="width:${pct}%;background:${bc}"></div></div></td>
+    </tr>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+// STORES
+// ══════════════════════════════════════════
+function onRomFilterChange(){
+  const rom=document.getElementById('f-rom').value;
+  const sdSel=document.getElementById('f-sd');
+  sdSel.innerHTML='<option value="all">All SDs</option>';
+  const sds=rom!=='all'?(D.sdsByRom[rom]||[]):[...new Set(Object.values(D.sdsByRom||{}).flat())].sort();
+  sds.forEach(sd=>{const o=document.createElement('option');o.value=sd;o.textContent=sd;sdSel.appendChild(o);});
+  renderStores();
+}
+
+function setStoreView(mode){
+  storeViewMode=mode;
+  const di=document.getElementById('f-date'),wb=document.getElementById('sv-week-btn'),db=document.getElementById('sv-date-btn');
+  if(mode==='weekly'){di.style.display='none';wb.style.background='var(--red)';wb.style.color='#fff';db.style.background='none';db.style.color='var(--text-s)';}
+  else{di.style.display='block';db.style.background='var(--red)';db.style.color='#fff';wb.style.background='none';wb.style.color='var(--text-s)';}
+  renderStores();
+}
+
+function renderStores(){
+  if(!D)return;
+  const rf=document.getElementById('f-rom').value,sf=document.getElementById('f-sd').value;
+  const statusF=document.getElementById('f-status').value,selDate=document.getElementById('f-date').value;
+  const dateEntry=D.timeline.find(t=>t.date===selDate);
+  const fmtDate=selDate?new Date(selDate+'T00:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}):'';
+  let stores=[];
+  getRoms().forEach(rom=>{
+    if(rf!=='all'&&rom!==rf)return;
+    (D.storesByRom[rom]||[]).forEach(s=>{
+      if(sf!=='all'&&s.sd!==sf)return;
+      const dr={};
+      D.timeline.forEach(t=>{const c=getDateCompliance(rom,t.date);dr[t.date]=isExcluded(t.date)?'skip':(c.completed.includes(s.code)?'y':'n');});
+      const active=getActiveDates();
+      const done=active.filter(t=>dr[t.date]==='y').length;
+      const wP=active.length?Math.round(done/active.length*100):0;
+      let dayResult='nodata';
+      if(selDate){
+        if(isExcluded(selDate))dayResult='skip';
+        else if(dateEntry){const c=getDateCompliance(rom,selDate);dayResult=c.completed.includes(s.code)?'y':'n';}
+      }
+      stores.push({...s,rom,dr,wP,dayResult});
+    });
+  });
+  if(storeViewMode==='weekly'){if(statusF==='100')stores=stores.filter(s=>s.wP===100);else if(statusF==='partial')stores=stores.filter(s=>s.wP>0&&s.wP<100);else if(statusF==='0')stores=stores.filter(s=>s.wP===0);}
+  else{if(statusF==='100')stores=stores.filter(s=>s.dayResult==='y');else if(statusF==='0')stores=stores.filter(s=>s.dayResult==='n');}
+  document.getElementById('store-count-lbl').textContent=`${stores.length} stores`;
+  const th=document.getElementById('stores-thead');
+  th.innerHTML=storeViewMode==='weekly'
+    ?`<th>Store</th><th>ROM</th><th>SD</th>`+D.timeline.map(t=>`<th style="text-align:center">${t.day.slice(0,3)}<br><span style="font-size:9px">${t.dateLabel}</span></th>`).join('')+`<th style="text-align:center">Overall %</th>`
+    :`<th>Store</th><th>ROM</th><th>SD</th><th style="text-align:center">${dateEntry?dateEntry.day:'Date'}<br><span style="font-size:9px">${fmtDate}</span></th>`;
+  const tb=document.getElementById('stores-tbody');
+  if(!stores.length){tb.innerHTML='<tr class="empty-row"><td colspan="10">No stores match your filters</td></tr>';return;}
+  tb.innerHTML=stores.map(s=>{
+    let cells='';
+    if(storeViewMode==='weekly'){cells=D.timeline.map(t=>{const r=s.dr[t.date];return`<td style="text-align:center"><span class="check ${r==='skip'?'skip':r==='y'?'y':'nn'}">${r==='skip'?'🎉':r==='y'?'✓':'✗'}</span></td>`;}).join('')+`<td style="text-align:center">${pctPill(s.wP)}</td>`;}
+    else{const r=s.dayResult;cells=r==='nodata'?`<td style="text-align:center;font-size:11px;color:var(--text-xs)">Not a TPL day</td>`:`<td style="text-align:center"><span class="check ${r==='skip'?'skip':r==='y'?'y':'nn'}">${r==='skip'?'🎉':r==='y'?'✓':'✗'}</span></td>`;}
+    return`<tr><td><span class="store-name">${s.name}</span><span class="store-code">${s.code}</span></td><td><div class="rom-chip" style="font-size:12px"><div class="rom-dot" style="background:${ROM_COLORS[s.rom]||'#999'}"></div>${s.rom.split(' ')[0]}</div></td><td style="font-size:12px;font-weight:700;color:var(--text-s)">${s.sd||'—'}</td>${cells}</tr>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+// CATEGORY
+// ══════════════════════════════════════════
+function renderCategory(){
+  if(!D)return;
+  const overall=D.categoryOverall||{},byRom=D.categoryByRom||{};
+  const sorted=Object.entries(overall).sort((a,b)=>b[1]-a[1]);
+  const totalSessions=Object.values(overall).reduce((a,b)=>a+b,0)||1;
+  const colors=["#E8282A","#1565C0","#1D8348","#F5A623","#7B1FA2","#E67E22","#00796B","#C62828","#283593","#2E7D32","#F57F17","#6A1B9A","#00695C"];
+  document.getElementById('overall-cat-grid').innerHTML=sorted.map(([cat,count],i)=>{
+    const col=colors[i%colors.length],icon=CAT_ICONS[cat]||'🎯';
+    return`<div class="overall-cat-card"><div style="width:36px;height:36px;border-radius:10px;background:${col}22;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">${icon}</div><div style="flex:1"><div style="font-size:12px;font-weight:800;color:var(--text)">${cat}</div><div style="font-size:20px;font-weight:900;color:${col};line-height:1">${count}</div><div style="font-size:10px;color:var(--text-xs);font-family:var(--font-b)">${Math.round(count/totalSessions*100)}% of sessions</div></div></div>`;
+  }).join('');
+  document.getElementById('cat-rom-grid').innerHTML=getRoms().map(rom=>{
+    const cats=byRom[rom]||{};const sortedC=Object.entries(cats).sort((a,b)=>b[1]-a[1]);
+    const maxVal=Math.max(...Object.values(cats),1),total=Object.values(cats).reduce((a,b)=>a+b,0);
+    const col=ROM_COLORS[rom]||'#999';
+    if(!sortedC.length)return`<div class="cat-rom-card"><div class="cat-rom-header" style="background:${col}11"><div class="rom-dot" style="background:${col}"></div><div style="font-size:13px;font-weight:900">${rom}</div></div><div style="padding:20px;text-align:center;font-size:12px;color:var(--text-xs);font-family:var(--font-b)">No data from 25 May yet</div></div>`;
+    return`<div class="cat-rom-card"><div class="cat-rom-header" style="background:${col}11"><div class="rom-dot" style="background:${col}"></div><div style="font-size:13px;font-weight:900">${rom}</div><span style="margin-left:auto;font-size:11px;color:var(--text-xs);font-family:var(--font-b)">${total} sessions</span></div>${sortedC.map(([cat,count])=>`<div class="cat-bar-row"><div class="cat-bar-label" title="${cat}">${CAT_ICONS[cat]||'🎯'} ${cat}</div><div class="cat-bar-wrap"><div class="cat-bar-fill" style="width:${Math.round(count/maxVal*100)}%;background:${col}"></div></div><div class="cat-bar-count">${count}</div></div>`).join('')}</div>`;
+  }).join('');
+}
+
+// ══════════════════════════════════════════
+// START
+// ══════════════════════════════════════════
+loadAll();
+</script>
+</body>
+</html>
