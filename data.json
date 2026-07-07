@@ -3,7 +3,7 @@
     "Divya Lakshmi": 14,
     "Shirish Mastud": 27,
     "Ashlin Moses": 25,
-    "Ajay Gill": 20,
+    "Ajay Gill": 19,
     "Chetan Chaudhari": 15,
     "Lalit Mohan": 17
   },
@@ -115,7 +115,7 @@
       {
         "name": "Hamleys - Nexus Seawood",
         "code": "THH8",
-        "sd": "Sudhir"
+        "sd": "Sudhir Singrakhia"
       },
       {
         "name": "Hamleys - T1 Arrival",
@@ -130,7 +130,7 @@
       {
         "name": "Hamleys - Oberoi, Goregaon",
         "code": "THJ2",
-        "sd": "Sudhir"
+        "sd": "Sudhir Singrakhia"
       },
       {
         "name": "Hamleys - T2 Arrival",
@@ -160,7 +160,7 @@
       {
         "name": "Hamleys - JWD",
         "code": "TY4T",
-        "sd": "Sudhir"
+        "sd": "Sudhir Singrakhia"
       },
       {
         "name": "Ham - Goa Airport",
@@ -200,7 +200,7 @@
       {
         "name": "Ham - Rcity Mall, Ghatkopar",
         "code": "T7ZN",
-        "sd": "Sudhir"
+        "sd": "Sudhir Singrakhia"
       },
       {
         "name": "Ham. Sky City",
@@ -215,7 +215,7 @@
       {
         "name": "Ham.MakerMax",
         "code": "TLY7",
-        "sd": "Sudhir"
+        "sd": "Sudhir Singrakhia"
       }
     ],
     "Ashlin Moses": [
@@ -405,11 +405,6 @@
         "name": "Vaishali- Jaipur",
         "code": "TXUT",
         "sd": "Shashank Rathore"
-      },
-      {
-        "name": "Good Earth - Gurgaon",
-        "code": "TXYT",
-        "sd": "Param"
       },
       {
         "name": "Ham.PacificMal",
@@ -621,8 +616,7 @@
       "Almas Zaidi",
       "Virendra Rahevar",
       "Sudhir Singrakhia",
-      "Nasir Shaikh",
-      "Sudhir"
+      "Nasir Shaikh"
     ],
     "Ashlin Moses": [
       "Harnest",
@@ -4092,6 +4086,6 @@
       "dateLabel": "18 Jun"
     }
   ],
-  "weekLabel": "18 May \u2013 18 Jun 2026",
-  "lastUpdated": "2026-06-19"
+  "weekLabel": "18 May – 18 Jun 2026",
+  "lastUpdated": "2026-07-07"
 }
