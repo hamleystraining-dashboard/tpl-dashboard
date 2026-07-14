@@ -356,11 +356,10 @@ let D0_OVERRIDE = {};
 let FC_DATA   = [];
 let fcDR={f:null,t:null}, stDR={f:null,t:null}, roDR={f:null,t:null};
 
-// If L&D has uploaded newer data via Admin page, use that instead
-try{const d=localStorage.getItem('ctp_joinees');if(d&&JSON.parse(d).length>0)JOINEES=JSON.parse(d);}catch(e){}
-try{const d=localStorage.getItem('ctp_responses');if(d&&JSON.parse(d).length>0)RESPONSES=JSON.parse(d);}catch(e){}
-try{const d=localStorage.getItem('ctp_store_map');if(d)STORE_MAP=JSON.parse(d);}catch(e){}
-try{D0_OVERRIDE=JSON.parse(localStorage.getItem('ctp_d0')||'{}');}catch(e){}
+// Generated index.html is the single source of truth.
+// Do not override embedded joinees/responses with stale browser localStorage.
+// Day 0 changes are already baked into DEFAULT_JOINEES by the Admin generator.
+D0_OVERRIDE = {};
 
 // =
 // CONSTANTS
@@ -735,19 +734,12 @@ function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t
 // INIT - always show data (embedded default or localStorage upload)
 // =
 window.addEventListener('DOMContentLoaded',()=>{
-  // Data is always available (embedded default data as fallback)
-  // localStorage overrides when L&D uploads fresh Excel via Admin page
+  // Always render the data embedded by the Admin generator.
   buildDashboard();
-  const src = localStorage.getItem('ctp_joinees_src');
-  const ts  = localStorage.getItem('ctp_joinees_ts');
   const pill = document.getElementById('srcPill');
-  if(src && localStorage.getItem('ctp_joinees')) {
-    pill.className = 'src-pill sp-ok';
-    document.getElementById('srcLabel').textContent = `${src}${ts?' - '+ts:''}`;
-  } else {
-    pill.className = 'src-pill sp-ok';
-    document.getElementById('srcLabel').textContent = `Embedded data - 271 historical responses baseline`;
-  }
+  pill.className = 'src-pill sp-ok';
+  document.getElementById('srcLabel').textContent =
+    `Embedded data - ${DEFAULT_JOINEES.length} joinees | ${DEFAULT_RESPONSES.length} responses`;
 });
 </script>
 </body>
