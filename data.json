@@ -4,7 +4,7 @@
     "Shirish Mastud": 27,
     "Ashlin Moses": 25,
     "Ajay Gill": 18,
-    "Chetan Chaudhari": 15,
+    "Chetan Chaudhari": 14,
     "Lalit Mohan": 17
   },
   "excludedDays": [],
@@ -446,11 +446,6 @@
       {
         "name": "Hamleys - Quest",
         "code": "THF4",
-        "sd": "Manmohan"
-      },
-      {
-        "name": "Hamleys - Treasure Island,Indore",
-        "code": "THG2",
         "sd": "Manmohan"
       },
       {
@@ -4082,5 +4077,5 @@
     }
   ],
   "weekLabel": "18 May – 18 Jun 2026",
-  "lastUpdated": "2026-07-07"
+  "lastUpdated": "2026-08-03"
 }
