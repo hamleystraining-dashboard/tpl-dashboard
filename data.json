@@ -1,6 +1,6 @@
 {
   "romTotals": {
-    "Divya Lakshmi": 14,
+    "Divya Lakshmi": 13,
     "Shirish Mastud": 26,
     "Ashlin Moses": 25,
     "Ajay Gill": 19,
@@ -24,11 +24,6 @@
         "name": "Brookefields Mall - Coimbatore",
         "code": "THF1",
         "sd": "Damodharan"
-      },
-      {
-        "name": "Lulu International Mall - Kochi",
-        "code": "THG0",
-        "sd": "Divya Lakshmi"
       },
       {
         "name": "Nexus Vijaya Mall - Chennai",
@@ -4078,5 +4073,5 @@
     }
   ],
   "weekLabel": "18 May – 18 Jun 2026",
-  "lastUpdated": "2026-08-25"
+  "lastUpdated": "2026-09-21"
 }
