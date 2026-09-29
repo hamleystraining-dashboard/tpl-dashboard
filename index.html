@@ -477,9 +477,15 @@ function processCSV(csvText, cfg){
 
     // ── STEP 2 & 3: Try all date interpretations, pick best match ──
     // Candidates: M/D, D/M swap, and timestamp-month-anchor with each digit
-    const parts = dateStr.split('/');
-    let a = parts[0] ? parseInt(parts[0]) : 0;
-    let b = parts[1] ? parseInt(parts[1]) : 0;
+    // Support both slash (M/D/YYYY) and dash (DD-MM-YYYY) separators
+    const rawDateStr = dateStr.trim().split(' ')[0];
+    const sepChar = rawDateStr.includes('/') ? '/' : '-';
+    const parts = rawDateStr.split(sepChar);
+    // For DD-MM-YYYY dash format: parts=[DD,MM,YYYY] — swap so a=month, b=day for M/D logic below
+    // For M/D/YYYY slash format: parts=[M,D,YYYY] — a=month, b=day already
+    const isDMY = sepChar==='-' && parts[2] && parts[2].length===4;
+    let a = isDMY ? parseInt(parts[1]) : (parts[0] ? parseInt(parts[0]) : 0); // month
+    let b = isDMY ? parseInt(parts[0]) : (parts[1] ? parseInt(parts[1]) : 0); // day
     const fixedYear = (dateObj.getUTCFullYear()<2024||dateObj.getUTCFullYear()>2030)
       ? tsDate.getUTCFullYear() : dateObj.getUTCFullYear();
 
@@ -516,6 +522,31 @@ function processCSV(csvText, cfg){
       }
     }
 
+    // Stale-timestamp fallback: when timestamp is >30 days before the entered date,
+    // the form platform recorded an old/cached timestamp. Trust the entered date's week
+    // and snap to the TPL day in that week that matches enteredDay.
+    {
+      const enteredMs = dateObj.getTime();
+      const tsDiff = (enteredMs - tsDate.getTime()) / 86400000;
+      const TPL_START_MS_EARLY = Date.UTC(2026,4,18);
+      if(tsDiff > 30 && enteredMs >= TPL_START_MS_EARLY){
+        // Find Monday of entered date's week
+        const entDow = new Date(enteredMs).getUTCDay();
+        const daysToMon = entDow===0 ? -6 : 1-entDow;
+        const weekMonMs = enteredMs + daysToMon*86400000;
+        // Walk Mon-Thu of that week and find the day matching enteredDay
+        for(let offset=0;offset<4;offset++){
+          const dayMs = weekMonMs + offset*86400000;
+          if(DAY_NAMES_WK[new Date(dayMs).getUTCDay()]===enteredDay){
+            // Use diff relative to entered date (not timestamp) so it scores well
+            const pseudoDiff = Math.abs(dayMs - enteredMs)/86400000;
+            candidates.push({diff:pseudoDiff, dayMatch:true, dtMs:dayMs, staleFallback:true});
+            break;
+          }
+        }
+      }
+    }
+
     if(!candidates.length) continue;
 
     // All date arithmetic uses UTC to avoid timezone/DST shifts (IST=UTC+5:30)
@@ -536,10 +567,14 @@ function processCSV(csvText, cfg){
     }
 
     // Filter: >= TPL_START, Mon-Thu, within 14 days of timestamp
+    // Also allow up to 60 days if the candidate's weekday matches the entered day-name
+    // (handles anomalous old timestamps from form edits/re-submissions)
     let validCandidates = candidates.filter(c => {
       if(c.dtMs < TPL_START_MS) return false;
       if(!TPL_DAYS.includes(utcDayName(c.dtMs))) return false;
-      return c.diff <= 14;
+      if(c.diff <= 14) return true;
+      if(c.diff <= 60 && c.dayMatch) return true; // trust date when day-name is consistent
+      return false;
     });
 
     // If no candidates pass, use all 4 TPL days of the timestamp's week
@@ -560,6 +595,19 @@ function processCSV(csvText, cfg){
       if(monMs >= TPL_START_MS){
         validCandidates.push({diff:0, dayMatch:'Monday'===enteredDay, dtMs:monMs});
       } else { continue; }
+    }
+
+    // If staleFallback candidate exists, discard any candidates in the timestamp's month
+    // (those are likely wrong interpretations caused by the stale timestamp)
+    const hasStale = validCandidates.some(function(c){return c.staleFallback;});
+    if(hasStale){
+      const tsMonthNum = tsDate.getUTCMonth();
+      const tsYearNum = tsDate.getUTCFullYear();
+      const nonStale = validCandidates.filter(function(c){
+        const cd = new Date(c.dtMs);
+        return c.staleFallback || cd.getUTCMonth()!==tsMonthNum || cd.getUTCFullYear()!==tsYearNum;
+      });
+      if(nonStale.length) validCandidates = nonStale;
     }
 
     // Score: proximity primary (+0), day-match bonus (-30), same month bonus (-20)
@@ -717,6 +765,13 @@ function parseDate(str){
   if(ymd){
     const ms=Date.UTC(parseInt(ymd[1]),parseInt(ymd[2])-1,parseInt(ymd[3]));
     return new Date(ms);
+  }
+  // DD-MM-YYYY (dash format used by MS Forms / manual entry)
+  const dmy=/^(\d{1,2})-(\d{1,2})-(\d{4})$/.exec(s);
+  if(dmy){
+    const ms=Date.UTC(parseInt(dmy[3]),parseInt(dmy[2])-1,parseInt(dmy[1]));
+    const check=new Date(ms);
+    if(check.getUTCMonth()===parseInt(dmy[2])-1)return check;
   }
   return null;
 }
