@@ -1,9 +1,9 @@
 {
   "romTotals": {
-    "Divya Lakshmi": 13,
-    "Shirish Mastud": 26,
-    "Ashlin Moses": 25,
-    "Ajay Gill": 19,
+    "Divya Lakshmi": 14,
+    "Shirish Mastud": 27,
+    "Ashlin Moses": 27,
+    "Ajay Gill": 20,
     "Chetan Chaudhari": 14,
     "Lalit Mohan": 17
   },
@@ -74,6 +74,11 @@
         "name": "Ham.PMCC",
         "code": "T61F",
         "sd": "Damodharan"
+      },
+      {
+        "name": "Lulu International Mall - Kochi",
+        "code": "THG0",
+        "sd": "Divya Lakshmi"
       }
     ],
     "Shirish Mastud": [
@@ -111,11 +116,6 @@
         "name": "Hamleys - Nexus Seawood",
         "code": "THH8",
         "sd": "Sudhir"
-      },
-      {
-        "name": "Hamleys - T1 Arrival",
-        "code": "THI8",
-        "sd": "Nasir Shaikh"
       },
       {
         "name": "Hamleys - Xperia, Dombivali",
@@ -206,6 +206,16 @@
         "name": "Ham.MakerMax",
         "code": "TLY7",
         "sd": "Sudhir"
+      },
+      {
+        "name": "Hamleys - HN Hospital",
+        "code": "TMA0",
+        "sd": "Almas Zaidi"
+      },
+      {
+        "name": "Ham.Relgreen",
+        "code": "TL6N",
+        "sd": "Virendra Rahevar"
       }
     ],
     "Ashlin Moses": [
@@ -333,6 +343,16 @@
         "name": "Ham.Lakeshore Hyd",
         "code": "TBAV",
         "sd": "Narayana"
+      },
+      {
+        "name": "Ham.Inorbit Hubli",
+        "code": "T9F6",
+        "sd": "Harnest"
+      },
+      {
+        "name": "Ham Koramangala",
+        "code": "TBPB",
+        "sd": "Umesh"
       }
     ],
     "Ajay Gill": [
@@ -387,11 +407,6 @@
         "sd": "Harsh Sharma"
       },
       {
-        "name": "Dhillon Plaza",
-        "code": "TXR2",
-        "sd": "Harsh Sharma"
-      },
-      {
         "name": "Vaishali- Jaipur",
         "code": "TXUT",
         "sd": "Shashank Rathore"
@@ -430,6 +445,16 @@
         "name": "Ham.WorldMark",
         "code": "TAHY",
         "sd": "Param"
+      },
+      {
+        "name": "Ham.Zirakpur",
+        "code": "TXR2",
+        "sd": "Harsh Sharma"
+      },
+      {
+        "name": "Ham.Jodhpur",
+        "code": "TD9T",
+        "sd": "Shashank Rathore"
       }
     ],
     "Chetan Chaudhari": [
@@ -4073,5 +4098,5 @@
     }
   ],
   "weekLabel": "18 May – 18 Jun 2026",
-  "lastUpdated": "2026-09-21"
+  "lastUpdated": "2026-10-01"
 }
