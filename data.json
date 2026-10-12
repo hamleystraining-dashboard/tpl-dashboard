@@ -1,9 +1,9 @@
 {
   "romTotals": {
-    "Divya Lakshmi": 14,
-    "Shirish Mastud": 27,
+    "Divya Lakshmi": 13,
+    "Shirish Mastud": 26,
     "Ashlin Moses": 27,
-    "Ajay Gill": 20,
+    "Ajay Gill": 19,
     "Chetan Chaudhari": 14,
     "Lalit Mohan": 17
   },
@@ -74,11 +74,6 @@
         "name": "Ham.PMCC",
         "code": "T61F",
         "sd": "Damodharan"
-      },
-      {
-        "name": "Lulu International Mall - Kochi",
-        "code": "THG0",
-        "sd": "Divya Lakshmi"
       }
     ],
     "Shirish Mastud": [
@@ -91,11 +86,6 @@
         "name": "Hamleys - Alpha One, Ahmedabad",
         "code": "THE2",
         "sd": "Virendra Rahevar"
-      },
-      {
-        "name": "Hamleys - Viviana, Thane",
-        "code": "THE9",
-        "sd": "Sudhir Singrakhia"
       },
       {
         "name": "Hamleys - MUMArpt",
@@ -412,11 +402,6 @@
         "sd": "Shashank Rathore"
       },
       {
-        "name": "Ham.PacificMal",
-        "code": "TF5T",
-        "sd": "Harsh Sharma"
-      },
-      {
         "name": "Clebration Mall - Udaipur",
         "code": "TAUN",
         "sd": "Shashank Rathore"
@@ -625,9 +610,9 @@
     "Shirish Mastud": [
       "Almas Zaidi",
       "Virendra Rahevar",
-      "Sudhir Singrakhia",
       "Nasir Shaikh",
-      "Sudhir"
+      "Sudhir",
+      "Sudhir Singrakhia"
     ],
     "Ashlin Moses": [
       "Harnest",
@@ -4098,5 +4083,5 @@
     }
   ],
   "weekLabel": "18 May – 18 Jun 2026",
-  "lastUpdated": "2026-10-01"
+  "lastUpdated": "2026-10-12"
 }
